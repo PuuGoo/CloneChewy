@@ -830,6 +830,10 @@ body {
     justify-content: space-between;
 }
 
+.footer-1-container a{
+    color: white;
+}
+
 .footer-1-item,
 .footer-1-item-btn {
 
@@ -839,7 +843,6 @@ body {
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
-    color: white;
 }
 
 .footer-1-item a {
