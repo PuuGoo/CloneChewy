@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 30 30">
+  <defs>
+    <style>.cls-1{fill:none;clip-rule:evenodd;}.cls-2{clip-path:url(#clip-path);}.cls-3{fill:#ccc;}.cls-4{clip-path:url(#clip-path-2);}</style>
+    <clipPath id="clip-path">
+      <path class="cls-1" d="M25.93,9.33a.44.44,0,0,0,0-.77l-9-6.4c-.3-.21-.54-.09-.54.29V6H11.83s-8.19.4-8.19,10.16a7.45,7.45,0,0,1,6.9-4.31h5.82v3.64c0,.37.24.5.54.29Z"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <path class="cls-1" d="M4.18,20.59a.44.44,0,0,0,0,.77l9,6.4c.3.21.54.09.54-.29V24h4.53s8.19-.4,8.19-10.16a7.45,7.45,0,0,1-6.9,4.31H13.75V14.48c0-.37-.24-.5-.54-.29Z"/>
+    </clipPath>
+  </defs>
+  <title>icon-autoship</title>
+  <g id="Layer_3" data-name="Layer 3">
+    <g class="cls-2">
+      <rect class="cls-3" x="0.29" y="-1.29" width="29.22" height="20.75"/>
+    </g>
+    <g class="cls-4">
+      <rect class="cls-3" x="0.61" y="10.46" width="29.22" height="20.75"/>
+    </g>
+  </g>
+</svg>
