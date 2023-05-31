@@ -15,10 +15,12 @@ html {
     --black-2: #3f3c3c;
     --black-3: #5b6359;
     --black-4: #666666;
+    --black-5: #fcfcfc;
     --white-1: #e8e8e8;
     --white-2: #ffffff;
     --blue-1: #1c49c2;
     --orange-1: #ef6c00;
+    --gray-1: #666;
 }
 
 body {
