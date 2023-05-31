@@ -1,0 +1,66 @@
+.dogFoods{
+    padding: 2rem 0;
+}
+.dogFoods__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.dogFoods__wrapper__left{
+    padding-left: 2rem;
+    width: 170px;
+}
+.category{
+    line-height: 2rem;
+    border-bottom: 1px solid #eee;
+    width: 250px;
+}
+.category h3{
+    font-size: 1.8rem;
+    color: var(--black-4);
+    padding-bottom: 1rem;
+}
+.category li{
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    padding-bottom: 1rem;
+}
+.category a{
+    color: var(--blue-1);
+}
+
+.autoShip{
+    padding: 2rem 0;
+    border-bottom: 1px solid #eee;
+    width: 250px;
+}
+.autoShip__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.autoShip__checkbox{
+    padding-right: 1rem;
+}
+.autoShip__checkbox input{
+    width: 20px;
+    height: 20px;
+}
+.autoShip__info svg{
+    width: 24px;
+    height: 24px;
+}
+.autoShip__info a{
+    font-size: 1.4rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: var(--black-1);
+}
+.autoShip__icon{
+    display: flex;
+    align-items: center;
+    height: 20px;
+}
+.autoShip__desc{
+    font-size: 1.4rem;
+    width: 220px;
+    padding: 1.4rem 0;
+}
