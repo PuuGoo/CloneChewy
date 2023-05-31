@@ -85,6 +85,9 @@ body{
 .btn__new__acc{
     width: 20rem;
 }
+..btn__new__acc a:hover{
+    color: var(--white-2);
+}
 .primary__btn__new__acc{
     font-family: "Poppins",sans-serif;
     color: var(--white-2);
