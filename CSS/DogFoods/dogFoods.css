@@ -28,19 +28,23 @@
     color: var(--blue-1);
 }
 
-.autoShip{
+.autoShip,
+.category__name{
     padding: 2rem 0;
     border-bottom: 1px solid #eee;
     width: 250px;
 }
-.autoShip__wrapper{
+.autoShip__wrapper,
+.category__name__wrapper{
     display: flex;
     justify-content: space-between;
 }
-.autoShip__checkbox{
+.autoShip__checkbox,
+.category__name__checkbox{
     padding-right: 1rem;
 }
-.autoShip__checkbox input{
+.autoShip__checkbox input,
+.category__name__checkbox input{
     width: 20px;
     height: 20px;
 }
@@ -48,7 +52,8 @@
     width: 24px;
     height: 24px;
 }
-.autoShip__info a{
+.autoShip__info a,
+.category__name__content a{
     font-size: 1.4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -63,4 +68,29 @@
     font-size: 1.4rem;
     width: 220px;
     padding: 1.4rem 0;
+}
+.category__name__wrapper{
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 1.4rem;
+}
+.category__name__content a{
+    color: #121212;
+    font-weight: 400;
+}
+.category__name__title{
+    font-size: 2rem;
+    font-family: "Poppins",sans-serif;
+    padding-bottom: 2rem;
+    font-weight: 500;
+}
+.category__name__icon{
+    margin-bottom: 5px;
+}
+.category__name__icon i{
+    color: #f8ae24;
+}
+.category__name__icon span{
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
 }
