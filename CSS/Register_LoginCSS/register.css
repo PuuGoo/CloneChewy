@@ -1,6 +1,9 @@
 /* Register section */
+.footer{
+    padding: 4.5rem 0;
+}
 .register{
-    padding: 2rem 0;
+    padding-top: 2rem;
 }
 .register .container{
     width: 800px;
@@ -55,6 +58,7 @@
     line-height: 1.4rem;
     color: var(--black-1);
     font-family: "Poppins",sans-serif;
+    padding-bottom: 1rem;
 }
 .register__tips .register__tips__item{
     list-style: initial;
@@ -92,6 +96,7 @@
     font-size: 1.4rem;
     font-family: "Poppins",sans-serif;
     color: var(--black-4);
+    padding: 1rem 0;
 }
 .btn-sign-in{
     display: flex;
