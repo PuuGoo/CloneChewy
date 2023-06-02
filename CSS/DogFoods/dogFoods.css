@@ -94,3 +94,39 @@
     font-family: "Raleway", sans-serif;
     font-weight: 500;
 }
+
+.dogFoods__wrapper__right{
+    padding-left: 12rem;
+    width: 1400px;
+}
+.dogFood__address{
+    display: flex;
+    align-items: center;
+}
+.dogFood__address span{
+    padding-right: 0.5rem;
+    font-size: 1rem;
+}
+.dogFood__address p{
+    font-size: 1rem;
+}
+.dogFood__title{
+    font-size: 2.4rem;
+    padding: 1rem 0 2rem 0;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #121212;
+}
+.dogFood__banner img{
+    max-width: 1000px;
+    height: 170px;
+    padding-bottom: 20px;
+}
+.dogFood__item__list li{
+    display: inline-block;
+    display: flex;
+}
+.dogFood__item__list img{
+    width: 100px;
+    height: 100px;
+}
