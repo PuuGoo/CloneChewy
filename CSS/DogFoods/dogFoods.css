@@ -1,5 +1,6 @@
 .dogFoods{
     padding: 2rem 0;
+    background-color: var(--white-2);
 }
 .dogFoods__wrapper{
     display: flex;
@@ -124,9 +125,66 @@
 }
 .dogFood__item__list li{
     display: inline-block;
-    display: flex;
+    padding-right: 2rem;
 }
 .dogFood__item__list img{
     width: 100px;
     height: 100px;
+}
+.dogFood__item__list span{
+    display: block;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 1.4rem;
+    font-family: "Raleway",sans-serif;
+    font-weight: 400;
+    color: var(--gray-1);
+}
+.statistics{
+    padding-top: 8rem;
+}
+.statistics__wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.statistics__title{
+    font-size: 1.8rem;
+    color: #242424;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+}
+.statistics__rank{
+    font-size: 1.8rem;
+    font-family: "Raleway",sans-serif;
+    border-radius: 8px;
+    padding: 2rem 0;
+    border: 1px solid var(--black-4);
+}
+.statistics__rank li{
+    display: inline-block;
+}
+.statistics__wrapper{
+    margin: 0 1.4rem;
+}
+.statistics__rank .options{
+    padding-right: 16rem;
+}
+.four__options{
+    padding-top: 2rem;
+}
+.four__options__wrapper{
+    width: 250px;
+    height: 250px;
+}
+.options__desc span{
+    display: block;
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem 0 2rem 0;
+    font-family: "Poppins",sans-serif;
+    color: var(--gray-1);
+}
+.options__desc span:hover{
+    text-decoration: underline;
 }
