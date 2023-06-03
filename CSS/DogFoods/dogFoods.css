@@ -2,9 +2,14 @@
     padding: 2rem 0;
     background-color: var(--white-2);
 }
+.dogFoods .container{
+    max-width: 1400px;
+    margin: 0 auto;
+}
 .dogFoods__wrapper{
     display: flex;
     justify-content: space-between;
+    width: 100%;
 }
 .dogFoods__wrapper__left{
     padding-left: 2rem;
@@ -58,7 +63,7 @@
     font-size: 1.4rem;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    color: var(--black-1);
+    color: #000044;
 }
 .autoShip__icon{
     display: flex;
@@ -98,6 +103,7 @@
 
 .dogFoods__wrapper__right{
     padding-left: 12rem;
+    padding-right: 2rem;
     width: 1400px;
 }
 .dogFood__address{
@@ -108,8 +114,13 @@
     padding-right: 0.5rem;
     font-size: 1rem;
 }
+.dogFood__address a{
+    color: blue;
+    text-decoration: underline;
+}
 .dogFood__address p{
     font-size: 1rem;
+    padding-left: 0.5rem;
 }
 .dogFood__title{
     font-size: 2.4rem;
@@ -119,7 +130,7 @@
     color: #121212;
 }
 .dogFood__banner img{
-    max-width: 1000px;
+    max-width: 1400px;
     height: 170px;
     padding-bottom: 20px;
 }
@@ -158,26 +169,41 @@
     font-size: 1.8rem;
     font-family: "Raleway",sans-serif;
     border-radius: 8px;
-    padding: 2rem 0;
+    padding: 2rem 1.4rem;
     border: 1px solid var(--black-4);
 }
 .statistics__rank li{
     display: inline-block;
 }
-.statistics__wrapper{
-    margin: 0 1.4rem;
-}
 .statistics__rank .options{
     padding-right: 16rem;
 }
-.four__options{
+.item__options{
     padding-top: 2rem;
 }
-.four__options__wrapper{
-    width: 250px;
-    height: 250px;
+.item__options ul{
+    display: flex;
+    justify-content: space-between;
 }
-.options__desc span{
+.item__options__wrapper{
+    height: 100%;
+    width: 260px;
+    border-radius: 8px;
+    border: 0.2rem solid #e2e0e0;
+}
+.item__options__description{
+    padding: 0 1.4rem;
+}
+.item__options__image{
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    width: 100%;
+}
+.item__options__image img{
+    mix-blend-mode: multiply;
+    padding: 1rem 0;
+}
+.item__options__name{
     display: block;
     text-align: center;
     font-size: 1rem;
@@ -185,6 +211,74 @@
     font-family: "Poppins",sans-serif;
     color: var(--gray-1);
 }
-.options__desc span:hover{
+.item__options__name:hover{
     text-decoration: underline;
 }
+.item__options__desc {
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+    color: #161616;
+    font-weight: 100;
+}
+.item__options__desc:hover{
+    text-decoration: underline;
+}
+.item__options__desc strong{
+    font-family: "Poppins",sans-serif;
+    color: black;
+    font-weight: 600;
+}
+.item__options__icon{
+    color: orange;
+    font-size: 1.4rem;
+    padding: 0.5rem 0 1.5rem 0;
+}
+.item__options__price{
+    font-family: "Poppins",sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #bc2848;
+    padding-bottom: 1rem;
+}
+.item__options__price del{
+    font-size: 1.4rem;
+    font-family: "Poppins",sans-serif;
+    font-weight: 400;
+    color: var(--gray-1);
+}
+.item__options__new_custiomers{
+    font-family: "Raleway",sans-serif;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--green-1);
+    color: var(--white-2);
+    font-weight: 400;
+    line-height: 14px;
+}
+.item__options__free{
+    padding-top: 1.4rem;
+    padding-bottom: 2.8rem;
+    font-size: 1.2rem;
+    color: var(--gray-1);
+}
+.autoShip__info__wrapper{
+    display: flex;
+    align-items: center;
+}
+.autoShip__info__wrapper .autoShip__icon{
+    padding-left: 0.5rem;
+}
+.autoShip__info__wrapper .autoShip__icon svg{
+    width: 70%;
+    height: 70%;
+}
+
+.items__list__table{
+    margin: 2rem 0;
+}
+.items__list__table__wrapper{
+    width: 300px;
+    height: 250px;
+}
+
+
