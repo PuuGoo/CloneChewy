@@ -36,6 +36,8 @@ body{
 .login__left__info input{
     width: 30rem;
     height: 50px;
+    font-size: 2rem;
+    padding: 9px;
 }
 .login__left__info label{
     position: absolute;
