@@ -998,3 +998,18 @@ body {
 .footer-4 a:visited{
     color: #000000;
 }
+
+.nav__wrapper a{
+    padding-left: 0!important;
+    padding: 0!important;
+}
+.footer-1{
+    margin-top: 3rem!important;
+}
+.footer-4{
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
+.dogFoods{
+    padding-bottom: 0!important;
+}

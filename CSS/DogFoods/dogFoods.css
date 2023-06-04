@@ -459,8 +459,8 @@
     padding-left: 0!important;
 }
 ::placeholder{
-    font-size: 1.4rem;
-    padding-left: 1rem;
+    font-size: 1.4rem!important;
+    padding-left: 2px!important;
 }
 .footer-1{
     margin-top: 3rem!important;
@@ -471,4 +471,8 @@
 }
 .dogFoods{
     padding-bottom: 0!important;
+}
+.header-navbar-menu{
+    height: 20px;
+    margin-top: 20px;
 }
