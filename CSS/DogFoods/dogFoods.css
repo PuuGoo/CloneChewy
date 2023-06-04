@@ -247,12 +247,11 @@
     color: var(--gray-1);
 }
 .item__options__new_custiomers{
-    font-family: "Raleway",sans-serif;
+    font-family: "Poppins",sans-serif;
     font-size: 1.3rem;
     padding: 0.5rem 1rem;
     background-color: var(--green-1);
-    color: var(--white-2);
-    font-weight: 400;
+    color: rgb(250, 250, 250);
     line-height: 14px;
 }
 .item__options__free{
@@ -264,6 +263,7 @@
 .autoShip__info__wrapper{
     display: flex;
     align-items: center;
+    padding-top: 0.5rem;
 }
 .autoShip__info__wrapper .autoShip__icon{
     padding-left: 0.5rem;
@@ -273,12 +273,43 @@
     height: 70%;
 }
 
-.items__list__table{
-    margin: 2rem 0;
+.item__options__wrapper.item__inline{
+    display: flex;
+    width: 350px;
+    height: 260px;
 }
-.items__list__table__wrapper{
-    width: 300px;
-    height: 250px;
+.item__options__wrapper.item__inline .item__options__image{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.item__options__wrapper.item__inline .item__options__image div{
+    width: 100%;
+    text-align: center;
+}
+.item__options__wrapper.item__inline img{
+    width: 120px;
+    height: 120px;
+}
+.item__options__description.item__margin{
+    margin: 4rem 0 0 0;
 }
 
-
+.item__options h2{
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 2rem 0;
+    border-top: 1px solid #eee;
+}
+.item__options__line{
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #eee;
+}
+.item__options.margin ul{
+    justify-content: initial;
+}
+.item__options.margin li{
+    padding-right: 16.66666666666667px;
+}
