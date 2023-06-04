@@ -419,6 +419,9 @@
     padding-right: 1rem;
     text-align: center;
 }
+.explore__more__wrapper a:hover{
+    text-decoration: underline;
+}
 .explore__more__wrapper img{
     width: 100px;
     height: 100px;
