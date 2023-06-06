@@ -432,6 +432,7 @@
     line-height: 1.8rem;
     color: var(--black-4);
     font-weight: 600;
+    /* max-width: 100px; */
 }
 .content__para{
     padding: 2rem 0;

@@ -1,0 +1,84 @@
+.footer-1 {
+    margin-top: 0 !important;
+}
+
+.give__back {
+    background-color: white;
+    padding-bottom: 2rem;
+}
+.give__back .container{
+    max-width: 1450px;
+    width: 100%;
+}
+.give__topic{
+    text-align: center;
+    padding: 2rem 0;
+}
+.give__topic h2{
+    font-size: 3rem;
+    font-weight: 600;
+    color: #163977;
+    padding: 2rem 0;
+}
+.give__topic p{
+    max-width: 660px;
+    margin: 0 auto;
+    font-size: 2rem;
+    line-height: 2.5rem;
+}
+
+.give__two__banner{
+    padding: 2rem 0;
+}
+.give__two__wrapper{
+    display: flex;
+    height: 240px;
+
+}
+.give__two__left{
+    padding-left: 8rem;
+    width: 50%;
+}
+.give__two__left.right{
+    padding-right: 8rem;
+    padding-left: 2rem;
+}
+.give__two__left__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    height: 100%;
+    background-color: #f2e9de;
+}
+.give__two__content{
+    padding: 2rem 0;
+}
+.content__title{
+    font-family: "Poppins",sans-serif;
+    font-size: 2.4rem;
+    color: #163977;
+    font-weight: 600;
+    max-width: 250px;
+}
+.give__two__content .btn{
+    font-size: 2rem;
+    font-family: "Poppins",sans-serif;
+    border-radius: 20px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 20px;
+}
+.give__two__content .primary__btn{
+    color: white;
+    background-color: #ef6461;
+    padding: 1.4rem 1rem;
+}
+.give__two__image {
+    padding-left: 3rem;
+}
+.give__two__image img{
+    width: 100px;
+    height: 100px;
+}
