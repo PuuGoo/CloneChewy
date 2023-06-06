@@ -82,3 +82,6 @@
     width: 100px;
     height: 100px;
 }
+.primary__btn a{
+    color: white;
+}
