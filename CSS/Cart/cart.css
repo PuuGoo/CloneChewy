@@ -1,6 +1,7 @@
 .cart{
     padding: 2rem;
     margin-bottom: 100px;
+    background-color: #f5fcf4;
 }
 .cart__wrapper{
     display: flex;
@@ -86,9 +87,60 @@
 .item__options__line{
     display: block !important;
 }
+.item__options{
+    background-color: white !important;
+}
 .footer{
     padding-top: 600px;
 }
 .item__options__description a{
     color: blue;
+}
+.item__options h2{
+    border: none;
+}
+.cart__right{
+    width: 400px;
+    height: 180px!important;
+    background-color: white !important;
+    padding: 0 2rem;
+}
+.cart__subtotal{
+    display: flex;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    padding-bottom: 1rem;
+    padding: 1rem 0 0.2rem 0;
+}
+.cart__subtotal div{
+    color: black !important;
+    font-weight: 600;
+}
+.cart__right__wrapper span{
+    font-size: 1.4rem;
+}
+.cart__FREE{
+    font-size: 1.6rem;
+    padding-top: 1.4rem;
+}
+.cart__btn{
+    font-family: "Poppins",sans-serif;
+    font-size: 1.6rem;
+    border-radius: 20px;
+    text-align: center;
+    margin-top: 2rem;
+}
+.cart__hr__blue{
+    padding: 5px;
+    background-color: #1c49c2;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+.cart__primary__btn{
+    color: white !important;
+    background-color: #ef6c00;
+    padding: 1.4rem 2rem;
+}
+.cart__btn a{
+    color: white !important;
 }
