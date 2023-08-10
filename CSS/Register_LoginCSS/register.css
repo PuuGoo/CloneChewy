@@ -129,3 +129,35 @@
     padding-left: 1.6rem;
     font-family: "Raleway",sans-serif;
 }
+
+
+.result {
+    font-size: 1.4rem;
+    color: red;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.register__info__action {
+    position: relative;
+}
+
+.register__info__action input {
+    padding-top: 20px;
+}
+
+#liEmail__hover0, 
+#liEmail__hover1 ,
+#liEmail__hover2 ,
+#liEmail__hover3 {
+    position: absolute;
+    top: -12px;
+}
+
+.login__left__info input {
+    padding-top: 20px;
+}
+
+.login__hover__input {
+    border: 2px solid yellow !important;
+}

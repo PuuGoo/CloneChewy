@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Register Page</title>
+    <link rel="stylesheet" href="./CSS/Register_LoginCSS/reset.css">
+    <link rel="stylesheet" href="./CSS/Register_LoginCSS//globalStyles.css">
+    <link rel="stylesheet" href="./CSS/Register_LoginCSS//components.css">
+    <link rel="stylesheet" href="./CSS/Cashout/cashout.css">
+</head>
+
+<body>
+    <!-- Nav section -->
+    <div class="nav">
+        <div class="container">
+            <div class="nav__wrapper">
+                <a href="index.html" class="logo">
+                    <img src="./Images/Register/logo.svg" alt="">
+                </a>
+                <div class="bgBorder"></div>
+                <ul class="nav__list">
+                    <li><a href="#" class="nav__link">Questions? 24/7 help</a></li>
+                    <li class="nav__link__border">
+                        <p class="nav__bgBorder"></p>
+                    </li>
+                    <li><a href="#" class="nav__link">Continue Shopping</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End nav section -->
+
+    <!-- Cashout section -->
+
+    <div class="cashout">
+        <div class="container">
+            <div class="container__wrapper">
+                <div class="submit">
+                    <h2>Your Shipping Address</h2>
+                    <div id="result"></div>
+                    <form action="" name="form" method="get">
+                        <div class="info__ship">
+                            <label for="">First Name</label>
+                            <input type="text" id="first__name" name="FirstName">
+                        </div>
+                        <div class="info__ship">
+                            <label for="">Street Address</label>
+                            <input type="text" id="street__address" name="Street">
+                        </div>
+                        <div class="info__ship">
+                            <label for="">Apt / Suite / Other</label>
+                            <input type="text">
+                        </div>
+                        <div class="info__other">
+                            <div class="info__ship__city">
+                                <label for="">City</label>
+                                <input type="text" name="City">
+                            </div>
+                            <div class="info__ship__state">
+                                <label for="">State</label>
+                                <select name="State">
+                                    <option disabled="disabled" selected="selected" class="select__state">
+                                        Select a State
+                                    </option>
+                                    <option value="AL">
+                                        ALABAMA
+                                    </option>
+                                    <option value="AZ">
+                                        ARIZONA
+                                    </option>
+                                    <option value="AR">
+                                        ARKANSAS
+                                    </option>
+                                    <option value="CA">
+                                        CALIFORNIA
+                                    </option>
+                                    <option value="CO">
+                                        COLORADO
+                                    </option>
+                                    <option value="CT">
+                                        CONNECTICUT
+                                    </option>
+                                    <option value="DE">
+                                        DELAWARE
+                                    </option>
+                                    <option value="DC">
+                                        DISTRICT OF COLUMBIA
+                                    </option>
+                                    <option value="FL">
+                                        FLORIDA
+                                    </option>
+                                    <option value="GA">
+                                        GEORGIA
+                                    </option>
+                                    <option value="ID">
+                                        IDAHO
+                                    </option>
+                                    <option value="IL">
+                                        ILLINOIS
+                                    </option>
+                                    <option value="IN">
+                                        INDIANA
+                                    </option>
+                                    <option value="IA">
+                                        IOWA
+                                    </option>
+                                    <option value="KS">
+                                        KANSAS
+                                    </option>
+                                    <option value="KY">
+                                        KENTUCKY
+                                    </option>
+                                    <option value="LA">
+                                        LOUISIANA
+                                    </option>
+                                    <option value="ME">
+                                        MAINE
+                                    </option>
+                                    <option value="MD">
+                                        MARYLAND
+                                    </option>
+                                    <option value="MA">
+                                        MASSACHUSETTS
+                                    </option>
+                                    <option value="MI">
+                                        MICHIGAN
+                                    </option>
+                                    <option value="MN">
+                                        MINNESOTA
+                                    </option>
+                                    <option value="MS">
+                                        MISSISSIPPI
+                                    </option>
+                                    <option value="MO">
+                                        MISSOURI
+                                    </option>
+                                    <option value="MT">
+                                        MONTANA
+                                    </option>
+                                    <option value="NE">
+                                        NEBRASKA
+                                    </option>
+                                    <option value="NV">
+                                        NEVADA
+                                    </option>
+                                    <option value="NH">
+                                        NEW HAMPSHIRE
+                                    </option>
+                                    <option value="NJ">
+                                        NEW JERSEY
+                                    </option>
+                                    <option value="NM">
+                                        NEW MEXICO
+                                    </option>
+                                    <option value="NY">
+                                        NEW YORK
+                                    </option>
+                                    <option value="NC">
+                                        NORTH CAROLINA
+                                    </option>
+                                    <option value="ND">
+                                        NORTH DAKOTA
+                                    </option>
+                                    <option value="OH">
+                                        OHIO
+                                    </option>
+                                    <option value="OK">
+                                        OKLAHOMA
+                                    </option>
+                                    <option value="OR">
+                                        OREGON
+                                    </option>
+                                    <option value="PA">
+                                        PENNSYLVANIA
+                                    </option>
+                                    <option value="RI">
+                                        RHODE ISLAND
+                                    </option>
+                                    <option value="SC">
+                                        SOUTH CAROLINA
+                                    </option>
+                                    <option value="SD">
+                                        SOUTH DAKOTA
+                                    </option>
+                                    <option value="TN">
+                                        TENNESSEE
+                                    </option>
+                                    <option value="TX">
+                                        TEXAS
+                                    </option>
+                                    <option value="UT">
+                                        UTAH
+                                    </option>
+                                    <option value="VT">
+                                        VERMONT
+                                    </option>
+                                    <option value="VA">
+                                        VIRGINIA
+                                    </option>
+                                    <option value="WA">
+                                        WASHINGTON
+                                    </option>
+                                    <option value="WV">
+                                        WEST VIRGINIA
+                                    </option>
+                                    <option value="WI">
+                                        WISCONSIN
+                                    </option>
+                                    <option value="WY">
+                                        WYOMING
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="info__ship__zip">
+                                <label for="">ZIP code</label>
+                                <input type="text" name="Zip">
+                            </div>
+                        </div>
+                        <div class="info__phone">
+                            <label for="">Phone Number</label>
+                            <input type="text" name="Phone">
+                        </div>
+                        <div class="button">
+                            <button type="button">Ship to This Address</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="saveup">
+                    <div class="saveup__introduce">
+                        <h2>
+                            <span>
+                                Start your first
+                                <span class="saveup__introduce__autoship">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <g fill-rule="evenodd">
+                                            <path fill="#18499B"
+                                                d="M19.24 4.26L17.3 6.74c-2.7-2.1-8.4-5.06-13.93 1.07-.45.5-.89 1.06-1.32 1.69L2 9.57h.01a11.5 11.5 0 016.46-1.48c2.83.18 4.05.86 5.8 2.54l-1.94 2.51s4.1 1.8 8.84-.25l-1.93-8.63z">
+                                            </path>
+                                            <path fill="#F27123"
+                                                d="M3.94 20.27l1.92-2.47c2.7 2.09 8.4 5.06 13.93-1.08.45-.5.89-1.05 1.32-1.68l.06-.07h-.01a11.5 11.5 0 01-6.46 1.47c-2.83-.17-4.05-.85-5.8-2.54l1.94-2.5s-4.1-1.8-8.84.25l1.94 8.62z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                    Autoship
+                                </span>
+                                order and save up to
+                                <span class="saveup__introduce__price">35% ($9.45)</span>
+                                today on eligible items!
+                            </span>
+
+                        </h2>
+                    </div>
+                    <div class="saveup__option__yes">
+                        <div class="checkbox__yes">
+                            <input type="checkbox">
+                            <div class="checkbox__title">Yes, make my life easy.</div>
+                        </div>
+                        <div class="checkbox__body">
+                            <div class="saveup__option__intro">You'll save an additional <span class="saveup__introduce__price">$9.45</span> on this order!</div>
+                            <div class="saveup__option__weeks">
+                                <div class="saveup__option__weeks__select">
+                                    <select name="" id="">
+                                        <option value="">Every 1 week</option>
+                                        <option value="">Every 2 weeks</option>
+                                        <option value="">Every 3 weeks</option>
+                                        <option value="">Every 4 weeks</option>
+                                        <option value="">Every 5 weeks</option>
+                                        <option value="">Every 6 weeks</option>
+                                        <option value="">Every 7 weeks</option>
+                                        <option value="">Every 8 weeks</option>
+                                        <option value="">Every 9 weeks</option>
+                                        <option value="">Every 10 weeks</option>
+                                        <option value="">Every 11 weeks</option>
+                                        <option value="">Every 12 weeks</option>
+                                        <option value="">Every 13 weeks</option>
+                                        <option value="">Every 14 weeks</option>
+                                        <option value="">Every 15 weeks</option>
+                                        <option value="">Every 16 weeks</option>
+                                        <option value="">Every 5 months</option>
+                                        <option value="">Every 6 months</option>
+                                        <option value="">Every 7 months</option>
+                                        <option value="">Every 8 months</option>
+                                    </select>
+                                    <div class="saveup__option__weeks__select__info">You can easily change, cancel, or reschedule shipments at any time.</div>
+                                </div>
+                                <div class="saveup__option__weeks__img"></div>
+                            </div>
+                            <div class="saveup__option__infoEnd">Maximum $20 savings on 35% off Autoship promotion. For Autoship-eligible items only. Some exclusions apply. For a limited time.</div>
+                        </div>
+
+                    </div>
+                    <div class="saveup__option__no">
+                        <div class="checkbox__no">
+                            <input type="checkbox">
+                            <div class="checkbox__title">No, thank you.</div>
+                        </div>
+                        <div class="saveup__option__intro">You'll buy these items once.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Cashout section -->
+
+    <!-- Footer section -->
+    <div class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__question">
+                    <h4><span><strong>Questions?</strong></span> We're here 24 hours a day: 1-800-672-4399</h4>
+                </div>
+                <ul class="footer__copyright">
+                    <li class="footer__copyright__title">© 2023, Chewy, Inc.</li>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy (Updated Dec 21, 2022)</a></li>
+                    <li><a href="#">
+                            <div class="footer__icon">
+                                <svg height="30" width="30" role="img" aria-label="Privacy-Choices" focusable="false"
+                                    xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none">
+                                    <path fill="var(--chirp-ui-elements-privacy-02, #fff)"
+                                        d="M2 11.794A4.795 4.795 0 0 1 6.795 7h10.41a4.795 4.795 0 0 1 0 9.589H6.796A4.794 4.794 0 0 1 2 11.795Z">
+                                    </path>
+                                    <path fill="var(--chirp-ui-elements-privacy-primary, #06f)" fill-rule="evenodd"
+                                        d="M6.795 7.822h6.321l-2.1 7.945H6.794a3.973 3.973 0 0 1 0-7.945ZM2 11.794A4.795 4.795 0 0 1 6.795 7h10.41a4.795 4.795 0 0 1 0 9.589H6.796A4.794 4.794 0 0 1 2 11.795Zm3.94-.136 1.216 1.273 2.629-3.124a.41.41 0 0 1 .585 0 .412.412 0 0 1 0 .586l-2.921 3.412a.416.416 0 0 1-.59 0l-1.504-1.561a.412.412 0 0 1 0-.586.41.41 0 0 1 .585 0Z"
+                                        clip-rule="evenodd"></path>
+                                    <path fill="var(--chirp-ui-elements-privacy-02, #fff)"
+                                        d="M14.473 13.26a.42.42 0 0 0 .003.585c.16.16.433.156.585.003l1.485-1.464 1.461 1.46a.42.42 0 0 0 .585-.003.42.42 0 0 0 0-.585l-1.457-1.461 1.457-1.488a.417.417 0 0 0 0-.585.424.424 0 0 0-.585-.004l-1.46 1.492-1.486-1.488a.42.42 0 0 0-.585.003.424.424 0 0 0-.003.586l1.488 1.484-1.488 1.464Z">
+                                    </path>
+                                </svg>
+                                Your Privacy Choices
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer Section -->
+
+    <script src="./JS/Cashout/cashout.js"></script>
+</body>
+
+</html>

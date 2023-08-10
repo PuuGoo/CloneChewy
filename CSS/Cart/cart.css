@@ -1,3 +1,8 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .cart{
     padding: 2rem;
     margin-bottom: 100px;
@@ -9,7 +14,7 @@
 }
 .cart__left{
     width: 1100px;
-    height: 200px;
+    /* height: 200px; */
 }
 .item__options__wrapper{
     width: 1100px!important;
@@ -55,6 +60,7 @@
 }
 .item__options__desc{
     font-size:1.5rrem;
+    width: 514.48px;
 }
 .right__option__save{
     font-size: 1.6rem;
@@ -91,7 +97,7 @@
     background-color: white !important;
 }
 .footer{
-    padding-top: 600px;
+    
 }
 .item__options__description a{
     color: blue;
@@ -143,4 +149,13 @@
 }
 .cart__btn a{
     color: white !important;
+}
+
+.checkbox {
+    margin-top: 91px;
+}
+
+.checkbox input {
+    width: 20px;
+    height: 20px;
 }

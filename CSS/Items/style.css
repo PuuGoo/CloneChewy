@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.eye-brow {
+    margin-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: blue;
+}
+
+.items {
+    background-color: white;
+}
+
+.container {
+    margin: 0 100px;
+}
+
+.items__wrapper {
+    padding-top: 15px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.items__image {
+    position: relative;
+}
+
+.items__big__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.items__small__image {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 10px;
+    padding: 0 64px;
+}
+
+.items__big__image img {
+    width: 220px;
+    height: 400px;
+}
+
+.items__small__image img {
+    width: 54px;
+    height: 54px;
+}
+
+.items__small__image img.hover {
+    border: 2px solid blue;
+}
+
+.items__pre ,
+.items__next,
+.items__first,
+.items__last,
+.items__heart{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 3px solid rgb(176, 176, 245);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.items__pre {
+    left: 16px;
+    top: 218.97px;
+}
+
+.items__next {
+    right: 16px;
+    top: 218.97px;
+}
+
+.items__heart {
+    top: 12px;
+    right: 16px;
+    padding-top: 2px;
+}
+
+.items__first {
+    top: 458px;
+    left: 14px;
+    padding-bottom: 4px;
+}
+
+.items__last {
+    top: 458px;
+    right: 14px;
+    padding-bottom: 4px;
+}
+
+.items__pre span,
+.items__next span,
+.items__first span,
+.items__last span,
+.items__heart span{
+    font-size: 2rem;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: blue;
+}
+
+.items__heart span {
+    color: gray;
+}
+
+.items__info {
+    width: 380px;
+    max-width: 400px;
+}
+
+.items__info__name {
+    font-size: 2rem;
+    font-weight: bold;
+    max-width: 400px;
+}
+
+.items__info__author {
+    font-size: 1.4rem;
+    padding: 5px 0;
+}
+
+.items__info__author a {
+    margin: 5px 0;
+    font-size: 1.4rem;
+}
+
+.items__info__star__rate {
+    font-size: 1.2rem;
+}
+.items__info__star__rate i {
+    color: orange;
+}
+
+.items__info__price {
+    margin: 30px 0;
+}
+
+.items__info__price__title {
+    font-size: 1.4rem;
+    padding-right: 20px;
+}
+
+.items__info__price__main {
+    font-size: 2.4rem;
+    color: red;
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+.items__info__price__sub {
+    font-size: 1.4rem;
+}
+
+.items__info__sale {
+    padding: 0.5rem 1rem 0.5rem 0.3rem;
+    background-color: #006b2b;
+    color: white;
+    font-size: 1.4rem;
+    line-height: 1.2;
+    border-radius: 3px;
+}
+
+.items__info__flavor {
+    padding: 30px 0;
+}
+
+
+.items__info__flavor p,
+.items__info__size p{
+    font-size: 1.4rem;
+}
+
+.items__info__flavor .flavor {
+    margin-top: 10px;
+    display: flex;
+}
+
+.flavor__1 ,
+.flavor__2,
+.size__1,
+.size__2,
+.size__3{
+    padding: 1rem 1.6rem;
+    border: 1px solid rgb(211, 211, 211);
+    font-size: 1.4rem;
+    border-radius: 5px;
+    color: blue;
+}
+
+.flavor__1 {
+    margin-right: 10px;
+}
+
+.flavor__1.flavor__hover ,
+.flavor__2.flavor__hover {
+    border: 3px solid blue;
+    border-radius: 10px;
+}
+
+.items__info__size p {
+    margin-bottom: 10px;
+}
+
+.size {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+.size__1 ,
+.size__2 ,
+.size__3 {
+    width: 120px;
+}
+
+.size__number.size__number__hover{
+    border: 3px solid blue;
+    border-radius: 10px;
+}
+
+.size__1__title ,
+.size__2__title ,
+.size__3__title {
+    font-size: 1.7rem;
+    color: blue;
+}
+
+.size__1__price ,
+.size__2__price ,
+.size__3__price {
+    color: gray;
+    margin-top: 5px;
+}
+
+.item__info__about__cart {
+    width: 300px;
+}
+
+.items__quantity__cart {
+    border-radius: 5px;
+    border: 1px solid rgb(199, 199, 199);
+    padding: 1rem;
+}
+
+.items__quantity__stock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+.items__stock {
+    grid-area: 1 / 2 / span 1 / span 2;
+}
+
+.items__quantity {
+    position: relative;
+    width: 93px;
+    height: 80px;
+}
+
+.items__quantity label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: rgb(255, 255, 255);
+    padding: 0 3px;
+    font-size: 1.2rem;
+    color: rgb(110, 110, 110);
+}
+
+.items__quantity select {
+    width: 93px;
+    height: 53px;
+    padding-top: 8px;
+    margin-top: 16px;
+    border: 1px solid black;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    font-size: 1.8rem;
+    padding-left: 10px;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.items__quantity i {
+    position: absolute;
+    font-size: 1.8rem;
+    top: 36px;
+    right: 30px;
+}
+
+.items__stock {
+    padding-top: 16px;
+    width: 100%;
+}
+
+.items__stock label {
+    color: #006b2b;
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
+.items__stock p {
+    font-size: 1.4rem;
+    color: black;
+    font-weight: bold;
+    margin-top: 5px;
+    line-height: 1.2;
+}
+
+.items__stock span {
+    color: black;
+    font-weight: 400;
+    font-family: sans-serif;
+}
+
+.items__cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.6rem;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+    background-color: #ef6c00;
+    border-radius: 40px;
+}
+
+.items__autoship {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: blue;
+    font-weight: bold;
+    border-radius: 40px;
+    padding: 1.2rem;
+    border: 2px solid blue;
+    margin-top: 10px;
+}
+
+svg {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+/* .items__bundle {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: solid rgb(216, 216, 216);
+}
+
+.bundle__info {
+    grid-area: 1 / 2 / span 1 / span 2;
+}
+
+.bundle__image img {
+    width: 90px;
+    height: 90px;
+} */
+
+.footer-1 {
+    margin-top: 20px !important;
+}
+
+.resultFlavor ,
+.resultSize{
+    padding-top: 10px;
+    font-size: 1.4rem;
+    color: red;
+    font-weight: bold;
+}

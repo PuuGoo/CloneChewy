@@ -98,3 +98,30 @@ body{
     color: var(--blue-1);
     background-color: var(--white-1);
 }
+
+.result {
+    font-size: 1.4rem;
+    color: red;
+    font-weight: bold;
+    padding-top: 5px;
+}
+
+.liEmail ,
+.liPassword{
+    position: relative;
+}
+
+#liEmail__hover0, 
+#liEmail__hover1 {
+    position: absolute;
+    top: -15px;
+}
+
+.login__left__info input {
+    padding-top: 20px;
+}
+
+.login__hover__input {
+    background-color: yellow;
+}
+

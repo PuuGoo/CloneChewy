@@ -1,0 +1,219 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cashout {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+}
+
+.container__wrapper {
+    border: none;
+    outline: none;
+}
+
+.submit {
+    width: 600px;
+    height: 500px;
+    border: 1px solid rgb(194, 194, 194);
+}
+
+.submit h2 {
+    margin: 10px;
+    color: black;
+    font-weight: bold;
+    font-size: 1.8rem;
+}
+
+.info__ship ,
+.info__ship__zip,
+.info__ship__state,
+.info__ship__city,
+.info__phone{
+    position: relative;
+    margin: 10px;
+    max-width: 578.182px;
+}
+
+.info__ship input ,
+.info__ship select,
+.info__ship__zip input,
+.info__ship__city input,
+.info__phone input{
+    width: 100%;
+    /* max-height: 3rem; */
+    padding: 1.2rem 0.8rem;
+    text-align: left;
+    font-size: 2rem;
+    padding-top: 2rem;
+}
+
+.info__ship label ,
+.info__ship label,
+.info__ship__zip label,
+.info__ship__state label,
+.info__ship__city label,
+.info__phone label{
+    position: absolute;
+    top: 1.8rem;
+    left: 0.8rem;
+    font-size: 2rem;
+    color: #666;
+    text-align: left;
+}
+
+.info__ship label.hover ,
+.info__ship__city label.hover,
+.info__ship__zip label.hover,
+.info__phone label.hover,
+.info__ship__state label.hover{
+    font-size: 1.2rem;
+    top: 0.8rem;
+}
+
+.info__other {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.info__ship__city {
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+.info__ship__state {
+    /* width: 120%; */
+    grid-area: 1 / 3 / span 1 / span 3;
+}
+
+.info__ship__zip {
+    /* width: 60%;
+    margin-left: 70px; */
+    grid-area: 1 / 6 / span 1 / span 2;
+}
+
+.info__ship__state label {
+    pointer-events: none;
+}
+
+.info__ship__state {
+    display: flex;
+    
+}
+
+.info__ship__state label.hover {
+
+}
+
+.info__ship__state select {
+    width: 100%;
+    /* max-height: 3rem; */
+    padding-left: 10px;
+    text-align: left;
+    font-size: 2rem;
+    padding-top: 15px;
+}
+
+.info__ship__state option {
+    font-size: 2rem;
+}
+
+.info__phone {
+    width: 50%;
+}
+
+#result {
+    padding-left: 10px;
+    font-size: 1.2rem;
+    color: red;
+}
+
+.button {
+    padding: 10px;
+}
+
+.button button {
+    padding: 1rem 3rem;
+    background-color: orangered;
+    color: white;
+    font-weight: bold;
+    font-size: 1.6rem;
+    border-radius: 5px;
+    height: 50px;
+    width: 240px;
+}
+
+.saveup {
+    width: 600px;
+    height: 500px;
+    margin-top: 24px;
+    border: 1px solid gray;
+    padding: 16px;
+
+}
+
+.saveup__introduce h2{
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    padding-bottom: 16px;
+}
+
+.saveup__introduce span {
+    display: inline-block;
+}
+
+.saveup__introduce svg {
+    width: 20px;
+    height: 20px;
+}
+
+.saveup__introduce__autoship {
+    display: flex;
+    align-items: center;
+    color: blue;
+    font-weight: bold;
+}
+
+.saveup__introduce__price {
+    color: red;
+    font-weight: bold;
+}
+
+.saveup__option__yes {
+
+}
+
+.checkbox__yes {
+    display: flex;
+    align-items: center;
+    padding-bottom: 16px;
+}
+
+.checkbox__yes input {
+    border-radius: 100%;
+    
+}
+
+.checkbox__title {
+    margin-left: 5px;
+    font-size: 2rem;
+    color: #327435;
+    font-weight: bold;
+}
+
+.checkbox__body {
+    margin-left: 18px;
+}
+
+.saveup__option__intro {
+    font-size: 2rem;
+    padding-bottom: 16px;
+}
+

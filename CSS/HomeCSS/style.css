@@ -184,6 +184,11 @@ body {
 
 .banner-big {
     margin-left: 71.5px;
+    position: relative;
+}
+
+.banner-big img {
+    display: none;
 }
 
 /* box-item */
@@ -1009,4 +1014,51 @@ body {
 }
 .dogFoods{
     padding-bottom: 0!important;
+}
+
+.items__pre ,
+.items__next {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(31, 31, 31);
+    color: white;
+}
+
+.items__pre {
+    top: 127px;
+    left: 20px;
+}
+
+.items__next {
+    top: 127px;
+    right: 90px;
+}
+
+.items__slide {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    width: 113px;
+    margin: auto;
+    padding: 0 8px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    bottom: 0px;
+    left: 700.750px;
+    color: white;
+}
+
+.items__pause__play{
+    font-size: 1.4rem;
+}
+
+.items__circle {
+    font-size: 0.8rem;
+    margin-left: 7px;
 }

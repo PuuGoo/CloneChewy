@@ -41,20 +41,24 @@
                         <h3>Please enter your information</h3>
                         <ul class="register__info">
                             <li class="register__info__action">
-                                <label for="">Full Name</label>
-                                <input type="text" required>
+                                <label for="name">Full Name</label>
+                                <input type="text" required id="name" >
+                                <div class="result"></div>
                             </li>
                             <li class="register__info__action">
-                                <label for="">Email Address</label>
-                                <input type="email" required>
+                                <label for="address">Email Address</label>
+                                <input type="email" required id="address">
+                                <div class="result"></div>
                             </li>
                             <li class="register__info__action">
-                                <label for="">Password(At least 8 characters)</label>
-                                <input type="password" required>
+                                <label for="password">Password(At least 8 characters)</label>
+                                <input type="password" required id="password">
+                                <div class="result"></div>
                             </li>
                             <li class="register__info__action">
-                                <label for="">Confirm Password</label>
-                                <input type="password" required>
+                                <label for="confirm">Confirm Password</label>
+                                <input type="password" required id="confirm">
+                                <div class="result"></div>
                             </li>
                             <ul class="register__tips">
                                 <li>Tips for a strong password:</li>
@@ -136,6 +140,7 @@
         </div>
     </div>
     <!-- End Footer Section -->
+    <script src="./JS/Register/register.js"></script>
 </body>
 
 </html>

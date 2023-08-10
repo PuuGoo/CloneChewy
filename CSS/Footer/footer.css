@@ -1,0 +1,202 @@
+/* footer-1 */
+
+.footer-1 {
+    background-color: #1C49C2;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 520px;
+
+    color: white;
+}
+
+.footer-1 div {
+    display: flex;
+    align-items: center;
+}
+
+.footer-1-container {
+    margin: 0 120px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-1-container a{
+    color: white;
+}
+
+.footer-1-item,
+.footer-1-item-btn {
+
+    height: 50px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.footer-1-item a {
+    display: block;
+}
+
+.footer-1-item {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+.footer-1-item i {
+    padding-right: 5px;
+}
+
+.footer-1-item div {
+    height: 30px;
+}
+
+.footer-1-item:visited {
+    color: white;
+}
+
+.footer-1-item-circle {
+    width: 177px;
+    height: 50px;
+
+    background: #FFFFFF;
+    border-radius: 20px;
+    color: #1C49C2 !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.footer-1-item-circle div {
+    height: 30px;
+}
+
+.footer-1-item-circle i {
+    padding-right: 5px;
+}
+
+/* footer-2 */
+
+.footer-2 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-2 ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    padding: 20px 0 40px 120px;
+}
+
+.footer-2 ul a {
+    display: block;
+    text-decoration: none;
+
+    padding-right: 40px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+
+    color: #121212;
+}
+
+.footer-2-social {
+    display: flex;
+    padding: 20px 120px 40px 120px;
+}
+
+.footer-2-social img {
+    width: 40px;
+    height: 40px;
+
+    padding-right: 10px;
+}
+
+/* footer-3 */
+
+.footer-3 {
+    display: flex;
+    justify-content: center;
+
+    padding-bottom: 20px;
+}
+
+.footer-3-app img {
+    width: 120px;
+    height: 40px;
+    margin-right: 20px;
+}
+
+.footer-3-logo img {
+    margin-right: 5px;
+    height: 40px;
+}
+
+.footer-3-logo-pharmacy {
+    width: 140px;
+}
+
+.footer-3-logo-legitscript {
+    width: 56px;
+}
+
+.footer-3-logo-compounding {
+    width: 61px;
+}
+
+.footer-3-space {
+    border-left: 1px solid #ddd;
+    margin-right: 20px;
+
+}
+
+/* footer-4 */
+
+.footer-4 {
+    margin: 0;
+    padding: 0;
+
+    padding: 0 120px;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+
+    color: #000000;
+}
+
+.footer-4 ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    list-style: none;
+}
+
+.footer-4 a:visited{
+    color: #000000;
+}
+
+.nav__wrapper a{
+    padding-left: 0!important;
+    padding: 0!important;
+}
+.footer-4{
+    padding-top: 1rem!important;
+    padding-bottom: 1rem!important;
+}
