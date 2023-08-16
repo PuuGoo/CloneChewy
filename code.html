@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code</title>
+    <style>
+        div {
+            font-size: 1.4rem;
+        }
+    </style>
 </head>
+
 <body>
     <!-- <img src="./Images/code/index_js.png" alt="">
     <img src="./Images/code/app_js.png" alt="">
@@ -32,5 +39,1762 @@
     <img src="./Images/code/5.png" alt="">
     <img src="./Images/code/6.png" alt=""> -->
     <a href="https://www.appbrewery.co/p/web-development-course-resources">Click It</a>
+    <div>
+        <h1>
+            Introduction to State
+        </h1>
+        <p>
+            Tất cả các bạn phù hợp cho đến nay, chúng ta đã học cách xây dựng các thành phần bằng React, trích xuất các
+            thành phần đó thành
+
+            các phần nhỏ hơn và chuyển các thuộc tính cho các thành phần đó để chúng ta có thể tùy chỉnh và sử dụng lại
+            chúng.
+
+            Nhưng một điều mà chúng tôi vẫn chưa xem xét là làm thế nào để chúng tôi làm cho các ứng dụng của mình trở
+            nên tương tác hơn?
+
+            Và lý do là vì để làm được điều đó chúng ta phải hiểu khái niệm trạng thái.
+
+            Và đây là một khái niệm thực sự trọng tâm về cách React thực hiện mọi thứ.
+
+            Và tôi nghĩ tốt nhất nên tóm tắt trong loại phương trình này.
+
+            Vì vậy, ý tưởng là giao diện người dùng hoặc giao diện người dùng mà ai đó đang xem trang web của bạn sẽ
+
+            thấy là một chức năng của trạng thái ứng dụng của bạn.
+
+            Hãy để tôi giải thích điều này thêm một chút bằng cách sử dụng phép loại suy.
+
+            Chúng ta hãy nghĩ về sự khác biệt giữa nước đá và nước.
+
+            Về cơ bản chúng giống nhau đúng không?
+
+            Bạn có thể coi chúng là cùng một thành phần React nhưng chúng sẽ thay đổi hình
+
+            thức tùy thuộc vào trạng thái nhiệt độ.
+
+            Vì vậy, nếu nhiệt độ tăng lên, thì nước đá sẽ biến thành nước.
+
+            Nếu nhiệt độ giảm xuống thì nước sẽ trở lại thành đá.
+
+            Vì vậy, trong trường hợp này, bạn có thể coi tảng băng là giao diện người dùng.
+
+            Và tùy thuộc vào giá trị của trạng thái đó, nếu nhiệt độ là âm 10 độ F cả độ F
+
+            và độ C, thì bạn sẽ nhìn thấy băng.
+
+            Nhưng nếu chúng ta thay đổi trạng thái và chúng ta thay đổi nhiệt độ ở mức 60 độ, thì băng của chúng ta
+
+            sẽ chuyển thành nước.
+
+            Vì vậy, những thay đổi về giao diện người dùng đang phản ánh những thay đổi về trạng thái.
+
+            Bây giờ điều này thực sự được thực hiện như thế nào với mã?
+
+            Chúng tôi có thể sẽ theo dõi một biến, giả sử nhiệt độ, và chúng tôi sẽ xác định cách giao diện người dùng
+            của chúng
+
+            tôi sẽ thay đổi thường xuyên hơn tùy thuộc vào các giá trị khác nhau của biến đó.
+
+            Giả sử rằng chúng tôi đã tạo một ứng dụng danh sách việc cần làm phải
+
+            không?
+
+            Và đây là một ví dụ rất đơn giản. Chúng tôi chỉ có một thành phần ứng dụng bên trong, chúng tôi có
+
+            một thành phần mục danh sách và mục danh sách chỉ lưu trữ một đoạn văn bản duy nhất.
+
+            Bây giờ, hãy nói rằng điều chúng ta muốn xảy ra là khi chúng ta nhấp vào mục danh sách này thì chúng ta muốn
+            văn
+
+            bản bên trong có một dòng kẻ hoặc gạch ngang.
+
+            Vì vậy, trong trường hợp này, chúng ta có thể có một biến trạng thái được gọi là isDone.
+
+            Và ban đầu nó được đặt thành false. Nhưng khi người dùng nhấp vào danh sách việc cần làm thì chúng ta sẽ
+
+            chuyển giá trị của biến đó từ false thành true.
+
+            Và những gì chúng tôi muốn các phần tử đoạn văn của mình làm là thay đổi giao diện của nó trong giao diện
+            người dùng để phản
+
+            ánh điều này và có kiểu dáng gạch ngang đó.
+
+            Hãy xem cách chúng tôi thực hiện việc này trong hộp cát mã.
+
+            Ở đây tôi có một thành phần ứng dụng đơn giản, theo nghĩa đen chỉ có một phần tử đoạn đơn trong đó và nó
+
+            chỉ hiển thị dòng chữ 'Mua sữa'.
+
+            Bây giờ chúng ta đã học về kết xuất có điều kiện.
+
+            Vì vậy, chúng tôi biết rằng nếu chúng tôi có một biến được gọi là isDone và chúng tôi đặt nó thành false,
+            thì chúng tôi có thể sử dụng nó để
+
+            thay đổi giao diện của thành phần React của chúng tôi. Ví dụ: bên trong phần tử <p> này,
+
+                tôi có thể thêm một thuộc tính style và tôi có thể đặt nó bằng một đối tượng Javascript mới
+
+                sẽ có textDecoration làm khóa.
+
+                Và sau đó là giá trị, nó sẽ được tính theo dòng. Và ngay sau khi điều đó được hiển thị, bạn có thể thấy
+                đây
+
+                là kiểu dáng cho cách bạn tạo một đường thẳng.
+
+                Nhưng tất nhiên chúng tôi không muốn một dòng trong văn bản của chúng tôi luôn ở đó.
+
+                Thay vào đó, chúng tôi muốn kiểu cụ thể này được hiển thị khi biến này được chuyển thành true.
+
+                Hãy để tôi tiếp tục và giải nén đối tượng Javascript này để làm cho mã của chúng ta dễ hiểu hơn một
+                chút.
+
+                Vì vậy, tôi sẽ tạo một const gọi là strikeThrough và tôi sẽ đặt nó bằng
+
+                đối tượng Javascript cụ thể này là kiểu dáng.
+
+                Bây giờ tôi sẽ áp dụng kiểu đó khi biến
+
+                isDone đúng. Được rồi.
+
+                Vậy là bạn đã học về toán tử bậc ba. Tất cả những gì chúng ta phải làm bên trong các dấu ngoặc nhọn này
+
+                là kiểm tra giá trị của isDone.
+
+                Vì vậy, với dấu chấm hỏi đó và nếu đó là sự thật, chúng tôi sẽ áp dụng kiểu gạch ngang. Nhưng nếu nó
+                không đúng,
+
+                thì chúng ta sẽ áp dụng null. Vì vậy, bây giờ khi thuộc tính isDone của tôi, là trạng thái mà
+
+                chúng tôi đang theo dõi, là sai,
+
+                tôi nhận được văn bản bình thường nhưng ngay sau khi điều đó chuyển thành true thì cảnh cáo thông qua
+                kiểu được
+
+                áp dụng và giao diện người dùng của tôi cập nhật để phản ánh cập nhật ở trạng thái .
+
+                Bây giờ, tất nhiên bạn có thể làm như thế này.
+
+                Nó làm chính xác những điều tương tự.
+
+                Nhưng điều quan trọng ở đây là chúng ta có một giao diện người dùng phụ thuộc vào giá
+
+                trị của một biến trạng thái. Và kiểu lập trình này thường được gọi là lập trình khai báo. Chúng tôi đang
+                khai báo khi viết mã
+
+                giao diện người dùng của chúng tôi trông như thế nào trong các điều kiện khác nhau tùy
+
+                thuộc vào trạng thái.
+
+                Phong cách lập trình khác sẽ được gọi là lập trình mệnh lệnh.
+
+                Và đây là những gì chúng tôi đã
+
+                và đang làm trong suốt quá trình sử dụng Javascript. Khi chúng tôi nói tài liệu. getElementById và sau
+                đó chúng tôi khai thác các thuộc tính
+
+                của nó và sau đó chúng tôi đặt nó
+
+                bằng một thứ gì đó, đây là điều bắt buộc chúng tôi phải sớm yêu cầu phần tử này làm điều gì đó khác
+                biệt.
+
+                Và bạn có thể đạt được kết quả chính xác như nhau.
+
+                Vì vậy, nếu tôi định xóa tất cả mã này mà chúng tôi đã có trước đó trong khi vẫn giữ phần tử đoạn đơn
+                của
+
+                mình, tôi có thể đi vào chỉ mục của mình. js, nhấn vào tài liệu trong DOM và lấy phần tử theo id.
+
+                Tôi sẽ lấy toàn bộ div gốc và tôi sẽ thiết lập phong cách của nó, cụ thể là thuộc
+
+                tính trang trí văn bản, bằng dòng.
+
+                Và khi dòng mã này được thực thi, bạn có thể thấy rằng đó chính xác là những gì đã xảy ra.
+
+                Và rất thường xuyên những gì chúng tôi đang làm là tạo ra một số loại người lắng nghe một cách hiệu quả.
+
+                Vì vậy, giả sử rằng chúng ta đã có một nút ở đây và nó nói rằng thay đổi để vượt qua và sau đó chúng ta
+                sẽ có một trình nghe onClick và sau
+
+                đó chúng ta sẽ chuyển nó có thể là một chức năng
+
+                phải không?
+
+                Và chúng ta có thể có một hàm được gọi là đình công và chúng ta có thể gọi nó trong onClick của mình.
+
+                Và khi điều này xảy ra thì những gì chúng ta làm là chúng ta tiếp tục và áp dụng kiểu dáng, do đó, mã
+
+                giống như
+
+                chúng ta đã có tài liệu trước đó. getElementById và thay đổi trang trí văn bản thành dòng.
+
+                Vì vậy, bây giờ khi tôi nhấp vào nút này, nó sẽ kích hoạt chức năng này và tôi tự thay đổi giao diện
+                thành
+
+                một giá trị mới.
+
+                Và nếu chúng tôi muốn thay đổi nó trở lại thì có lẽ chúng tôi sẽ có một nút khác có tên là unStrike.
+
+                Và trong trường hợp này, chúng tôi chỉ cần thay đổi trang trí văn bản trở lại null.
+
+                Vì vậy, trong trường hợp này khi tôi nhấp vào nó, nó
+
+                sẽ vượt qua nó, khi tôi nhấp vào nó, nó sẽ thay đổi nó trở lại.
+
+                Điều này là rất cấp thiết.
+
+                Đây là việc nắm giữ một mục và đặt thuộc tính của nó thành một giá trị mới mỗi khi
+
+                chúng ta muốn thay đổi này xảy ra.
+
+                Bây giờ, nếu chúng ta quay lại kiểu mã khai báo trước đây của mình, nơi chúng ta đã
+
+                theo dõi biến isDone đó, thì thay vì phải lấy phần tử và cập nhật các thuộc tính của nó, bạn có thể chỉ
+                cần
+
+                thay đổi là Xong thành true hoặc được thực hiện thành false.
+
+                Nhưng mặc dù bạn có thể nghĩ rằng mã này về mặt lý thuyết sẽ hoạt động, nhưng nó không.
+
+                Và lý do là vì những yếu tố này đang được kết xuất và chúng không thể thay đổi được.
+
+                Chúng phải được hiển thị lại trên màn hình để có thể nhìn thấy những thay đổi trong thuộc tính của
+                chúng,
+
+                chẳng hạn như thuộc tính kiểu của chúng. Và để làm được điều đó,
+
+                chúng ta phải tìm hiểu về một thứ gọi là hook. Hooks là một khái niệm React tương đối mới nhưng nó là
+                một khái
+
+                niệm thực sự mạnh mẽ.
+
+                Về mặt hiệu quả, chúng là các chức năng cho phép chúng tôi nhập vào trạng thái của ứng dụng và đọc hoặc
+                sửa đổi nó.
+
+                Trong bài học tiếp theo,
+
+                đó là những gì chúng tôi sẽ giới thiệu.
+
+                Và bạn sẽ thấy một trong những móc React được sử dụng phổ biến nhất, đó là use state hook.
+
+                Vì vậy, cho tất cả những điều đó và hơn thế nữa, tôi sẽ cho bạn ở bài học tiếp theo.
+            </p>
+    </div>
+    <div>
+        <h1>useState Hook
+        </h1>
+        Này các cậu. Trong bài học này, tôi muốn giải quyết ý tưởng về trạng thái này
+
+        và giới thiệu với bạn về React hooks như một cách để có thể làm cho trang web của chúng ta tương tác và thực sự
+        có trạng thái có thể thay đổi.
+
+        Hãy tiếp tục và
+
+        phân nhánh dự án bắt đầu cho bài học này. Và khi bạn đã hoàn tất, hãy xem
+
+        những gì chúng ta có ở đây bây giờ.
+
+        Không giống như các ứng dụng React trước đây của chúng tôi, tôi thực sự có tất cả mã React hiện đang tồn tại bên
+        trong chỉ mục của tôi. js và có một lý do cho điều này mà bạn sẽ sớm khám phá ra.
+
+        Nhưng bên trong chỉ mục của chúng tôi. js mã rất đơn giản.
+
+        Tất cả những gì chúng tôi đang làm là hiển thị một div duy nhất có h1 và một nút chứa bên trong nó.
+
+        Ý tưởng là đơn giản. Làm cách nào để chúng ta có thể sử dụng nút này để kích hoạt cập nhật số này để mỗi khi
+        người
+
+        dùng nhấn vào nút dấu cộng này, số này thực sự tăng giá trị?
+
+        Vì vậy, hãy nghĩ về cách chúng ta có thể tiếp cận vấn đề này.
+
+        Đầu tiên, h1 này có một giá trị được mã hóa cứng trong đó.
+
+        Vì vậy, điều đó sẽ không hiệu quả.
+
+        Vì vậy, hãy tiếp tục và
+
+        tạo một biến mới được gọi là count và đặt nó bằng 0 và sau đó chúng ta sẽ thay thế giá trị được mã hóa cứng này
+        bằng số lượng biến này.
+
+        Không có gì thay đổi cho đến nay trong giao diện người dùng.
+
+        Bây giờ, điều tiếp theo chúng ta cần
+
+        làm là có thể kích hoạt một số đoạn mã xảy ra bất cứ khi nào nút này được nhấp vào.
+
+        Vì vậy, chúng tôi biết từ HTML của mình rằng tất cả các phần tử nút của chúng tôi có một thuộc tính được gọi là
+        onClick. Và chúng ta có thể đặt điều đó
+
+        bằng một số loại chức năng được kích hoạt khi nút này nhận được một hành động nhấp chuột.
+
+        Bây giờ chúng ta biết rằng khi chúng ta tạo các thành phần React, tất cả các phần tử HTML
+
+        này và các thuộc tính của chúng sẽ được chuyển đổi thành trường hợp lạc đà, vì vậy một
+
+        cái gì đó như thế này. Vì vậy, trên thực tế, chúng tôi có thể đặt thuộc tính onClick này thành một hàm trong mã
+        của chúng tôi.
+
+        Vì vậy, hãy để tôi tạo một chức năng được gọi là tăng và
+
+        tất cả những gì tôi sẽ đưa vào bên trong chỉ là một câu lệnh nhật ký đơn giản nói rằng, 'Tôi đã được nhấp. 'Và
+        bây giờ trong onClick của chúng tôi, tôi sẽ thêm một tập hợp các
+
+        dấu ngoặc nhọn và gán cho nó chức năng đó.
+
+        Bây giờ những gì sẽ xảy ra là
+
+        khi tôi nhấp vào nút dấu cộng này, sau đó nó sẽ gọi chức năng này là tăng và nó sẽ ghi lại thông báo này và thực
+        sự là như vậy.
+
+        Nếu bạn nhìn vào bên trong bảng điều khiển, tôi sẽ nhận được một thông báo mới được ghi lại mỗi khi tôi nhấn nút
+        này.
+
+        Vì vậy, mã của chúng tôi đang hoạt động. Nhưng làm thế nào chúng ta có thể tăng số lượng được hiển thị ở đây?
+
+        Có một cách bạn có thể nghĩ để làm điều này
+
+        là chỉ cần viết số đếm ++ và điều này sẽ làm tăng giá trị của số đếm mỗi khi hàm tăng được gọi.
+
+        Và thực sự là như vậy.
+
+        Hãy tiếp tục và ghi lại giá
+
+        trị của số đếm bên trong hàm tăng và sau đó tôi sẽ nhấp vào nút dấu cộng. Và bạn có thể thấy rằng trong bảng
+        điều khiển đang ghi giá trị
+
+        của số đếm, nó thực sự
+
+        tăng lên 1 mỗi khi tôi nhấn nút. Nhưng giao diện người dùng của chúng tôi không thay đổi chút nào.
+
+        Chẳng có gì xảy ra.
+
+        Nó trông chết với tôi.
+
+        Vậy điều gì đang xảy ra ở đây?
+
+        Hãy nhớ rằng mặc dù chúng ta đang viết các phần tử HTML, nhưng chúng không thực sự là các phần tử thực đúng
+        không?
+
+        Chúng tôi đang dựa vào ReactDOM để thực sự hiển thị từng phần tử này lên màn hình.
+
+        Vì vậy, nếu chúng tôi muốn cập nhật những gì trên màn hình, chúng tôi thực sự phải kết xuất lại tất cả những thứ
+        này.
+
+        Vì vậy, nếu chúng tôi muốn cập nhật điều này, một cách để
+
+        thực hiện việc này thay vì ghi nhật ký bảng điều khiển là gọi React DOM. kết xuất lại tất cả bên trong chức năng
+        của chúng tôi.
+
+        Bây giờ nếu tôi nhấn lưu và tôi nhấp vào nút dấu cộng, bạn có thể thấy rằng nó thực sự hoạt động.
+
+        Và mỗi khi tôi nhấn nút này một cách hiệu quả, những gì nó đang làm là hiển thị lại
+
+        mọi thứ trên màn hình, đó là div của chúng tôi và h1 và nút của chúng tôi.
+
+        Và đây là loại không hiệu
+
+        quả phải không?
+
+        Và bên cạnh đó mã trông cũng khủng khiếp.
+
+        Chúng ta có tất cả những điều này lặp đi lặp lại mà
+
+        không thực sự làm được gì cho chúng ta.
+
+        Vậy làm thế nào để mọi người thực sự giải quyết vấn đề này bằng cách sử dụng React?
+
+        Đây là nơi mà móc câu đi vào. Và có một useState mã hook hoàn hảo cho tình huống này.
+
+        Nhưng một trong những quy tắc để sử dụng hook là bạn phải sử dụng hook bên trong một thành phần chức năng.
+
+        Vì vậy, chúng ta phải tạo một hàm hiển thị một thành phần và sau đó bên trong hàm đó, chúng ta có thể sử dụng
+        hook.
+
+        Vì vậy, hãy tiếp tục và nhập ứng dụng của chúng tôi. jsx và chuyển tất cả mã của chúng tôi vào Ứng dụng
+
+        của chúng tôi. js. Và sau đó trở lại chỉ mục của chúng tôi. js tất cả những gì chúng
+
+        ta cần là ReactDOM của chúng ta. kết xuất.
+
+        Và sau đó chúng tôi chỉ hiển thị một thành phần ứng dụng đơn giản.
+
+        Vì vậy, bây giờ chúng ta có thể tập trung vào thành phần ứng dụng của mình.
+
+        Và tôi sẽ chỉ bắt đầu bằng cách
+
+        gói mọi thứ bên trong một chức năng có tên là Ứng dụng để điều này được hiển thị và thay vì sử dụng ReactDOM.
+        kết xuất và tất cả tài liệu này lấy phần tử, v.v.
+
+        Tất cả những gì tôi sẽ làm chỉ là sử dụng câu lệnh return để
+
+        nó trở thành đầu ra của thành phần ứng dụng của chúng tôi và nó được tạo trên màn hình mà bạn có thể thấy ngay
+        tại đây.
+
+        Bây giờ tôi sẽ xóa tất cả mã ReactDOM
+
+        lặp lại này và bạn sẽ được để lại với một cái gì đó giống như thế này.
+
+        Bây giờ bên trong
+
+        thành phần ứng dụng của chúng tôi thay vì sử dụng số này, tôi sẽ tạo một hằng số mới mà tôi sẽ gọi trạng thái và
+        tôi sẽ đặt trạng thái thành React.
+
+        useState là một hàm.
+
+        Bây giờ, hàm useState này đến từ mô-đun React, vì vậy
+
+        tôi có thể gọi nó như thế này hoặc như bạn đã thấy từ bài học nhập và xuất, chúng ta
+
+        cũng có thể chỉ cần thêm dấu
+
+        phẩy và sau đó là một tập hợp các dấu ngoặc nhọn và nhập sử dụng hàm trạng thái như một bản xuất không mặc định.
+
+        Vì vậy, bây giờ thay vì nói React. useState Tôi có thể chỉ cần viết useState bất cứ khi nào tôi cần.
+
+        Bây giờ chính xác là
+
+        sử dụng State
+
+        nào?
+
+        Vì vậy, tôi sẽ tiếp tục và nhận xét số lượng của mình và tôi cũng sẽ xóa số lượng hiện đang tồn tại bên trong h1
+        của tôi để tôi loại bỏ lỗi của mình. Và thay vào đó, tôi sẽ ghi lại
+
+        trạng thái này thực sự bằng với.
+
+        Lưu ý cách trạng thái giữ giá trị trả về của hàm useState này.
+
+        Và nếu tôi ghi lại, bạn có thể thấy nó bao gồm một mảng có hai mục. Mục đầu tiên dường như không được xác định
+        và mục thứ
+
+        hai là một số loại chức năng.
+
+        Nếu tôi tiếp tục và thêm một giá trị vào đây, giả sử là 0 và
+
+        một lần nữa nhật ký bảng điều khiển của tôi được kích hoạt, bạn có thể thấy giá trị đầu tiên của mảng của
+
+        tôi được thay thế bằng bất kỳ giá trị nào mà tôi đặt ở đây.
+
+        Những gì bên trong các dấu ngoặc đơn này về cơ bản là trạng thái bắt đầu của chúng
+
+        ta và nếu chúng ta muốn nắm giữ giá trị này thông qua trạng thái này, chúng ta có thể chỉ cần nói trạng thái và
+        [0].
+
+        Vì vậy, điều đó sẽ nắm giữ giá trị ban đầu mà chúng tôi đặt vào hàm này.
+
+        Và tất nhiên bây giờ chúng ta có thể sử dụng trạng thái này bên trong thành phần React của chúng ta.
+
+        Vì vậy, tôi sẽ thay thế mã số 0 đó một lần nữa nhưng lần
+
+        này tôi sẽ khai thác vào mảng mới này được gọi là trạng thái và nắm giữ giá trị đầu tiên. Và bạn có thể thấy nó
+        hiện đang được hiển thị trên màn hình.
+
+        Và bất cứ khi nào tôi thay đổi trạng thái của mình, bạn sẽ thấy nó tự động cập nhật trong h1 của chúng tôi.
+
+        Vì vậy, hiệu quả là chúng tôi đang nói với h <1> này để theo dõi giá trị của trạng thái của chúng tôi.
+
+            Và bất cứ khi nào trạng thái cập nhật thì nó cũng sẽ hiển thị lại h1 này. Theo cách này, nó hiệu quả hơn
+            cách
+
+            chúng ta gọi là ReactDOM. kết xuất và nó chỉ cập nhật những phần cần
+
+            thay đổi, chẳng hạn như h1 này.
+
+            Bây giờ vì đầu ra của useState là một mảng, chúng tôi buộc phải viết mã như thế này. Nếu chúng ta muốn lấy
+            mục
+
+            đầu tiên ra khỏi mảng đó, chúng ta đang
+
+            sử dụng ký hiệu dấu ngoặc vuông này rất xấu vì nó không có ý nghĩa. Tại một số điểm xuống dòng, chúng ta sẽ
+            quên trạng thái 0 là gì và sẽ khó gỡ lỗi
+
+            các vấn đề khác khi chúng xuất hiện.
+
+            Bây giờ trong JavaScript ES6 có khái niệm này được gọi là cấu trúc hủy và những gì nó cho phép
+
+            bạn làm là hủy cấu trúc một cấu trúc
+
+            phức tạp.
+
+            Vì vậy, những thứ phức tạp trong JavaScript là các đối tượng và mảng.
+
+            Giả sử rằng tôi có một hằng
+
+            số là màu rgb phải không?
+
+            Và nó là một mảng bao gồm ba giá trị.
+
+            Nếu chúng ta đi đến máy làm phẳng. com đó là một bảng màu thực sự đẹp, nơi bạn
+
+            có thể chỉ cần sao chép các giá
+
+            trị màu này, hãy thay đổi màu sang định dạng rgb, vì vậy màu đỏ xanh xanh lam. Và chúng ta hãy sao chép màu
+            xanh điện tử này.
+
+            Bây giờ nếu tôi tiếp tục và dán cái này
+
+            vào đây, bạn có thể thấy rằng màu này bao gồm ba yếu tố, lượng màu đỏ, lượng màu xanh lá cây và lượng màu
+            xanh lam.
+
+            Hãy để tôi tiếp tục và thêm điều này vào bên trong mảng của tôi. Nếu tôi muốn truy cập số lượng màu
+
+            đỏ hoặc xanh lá cây hoặc xanh lam, tôi sẽ phải ghi
+
+            một thứ gì đó như rgb ở chỉ số 0 cho số lượng màu đỏ hoặc một cho số lượng màu xanh lá cây, v.v.
+
+            Và đây là mã thực sự tồi tệ vì nó không có nghĩa gì cả.
+
+            Và nếu mã này được tách ra từ nơi khai báo mảng
+
+            rgb và bạn chỉ thấy điều này một cách bất thường, ý tôi là điều đó có nghĩa
+
+            là gì đúng không?
+
+            Thay vào đó chúng ta có thể làm gì?
+
+            Chúng ta có thể
+
+            hủy cấu trúc mảng này để thay vì có tên này là rgb, chúng ta có thể sử dụng một tập hợp các dấu ngoặc vuông.
+
+            Hãy nhớ rằng chúng
+
+            ta đang làm việc với một mảng và các mảng được khai báo bằng cách sử dụng dấu ngoặc vuông, vì vậy chúng ta
+            cũng giải cấu trúc chúng bằng cách sử dụng dấu ngoặc vuông. Và sau đó chúng ta có thể cung cấp một số tên
+            cho từng phần tử bên
+
+            trong mảng được sắp xếp theo vị trí của chúng.
+
+            Vì vậy, tôi có thể gọi mục ở chỉ mục 1 là màu đỏ,
+
+            mục tiếp theo là màu xanh lá cây và mục cuối cùng là màu xanh lam.
+
+            Và những gì sẽ xảy ra đằng sau là tên biến
+
+            này màu đỏ sẽ được ánh
+
+            xạ tới giá trị đầu tiên này, màu xanh lá cây sẽ được ánh xạ lại thành giá trị thứ hai và màu xanh
+
+            lam sẽ được ánh xạ đến giá trị thứ ba.
+
+            Vì vậy, bây giờ nếu tôi chỉ đơn giản ghi lại giá trị của màu xanh lam, bạn có thể thấy rằng giá trị thứ ba
+            bị vượt quá.
+
+            Vì vậy, với điều kiện chúng ta biết rằng hàm useState này xuất ra một mảng với một giá trị
+
+            và một hàm, sau đó chúng ta có thể đặt tên cho mỗi cái này thay vì chỉ gọi nó là trạng thái.
+
+            Vì vậy, hãy mở một tập hợp các dấu ngoặc vuông và cho rằng chúng ta sẽ
+
+            sử dụng trạng thái này để giữ giá trị của
+
+            bộ đếm của chúng ta, tôi sẽ đặt tên cho mục đầu tiên của mảng được gọi là count.
+
+            Vì vậy, bây giờ bất cứ khi nào tôi muốn truy cập giá trị được lưu trữ bên trong
+
+            trạng thái, tất cả những gì tôi phải làm thay vì nói trạng thái ở vị trí 0, tôi có thể đơn giản chỉ cần đếm
+            và nó thực hiện điều tương tự.
+
+            Nó nắm giữ đầu ra của hàm này, là một mảng có hai mục
+
+            và vì chúng ta chỉ có một tên được chỉ định trong cấu trúc của chúng
+
+            ta, nó sẽ gán tên này cho giá trị đầu tiên là giá trị ban đầu.
+
+            Vậy làm cách nào để sử dụng hook useState này để cập nhật giá trị của nó?
+
+            Bởi vì thật tuyệt khi chúng ta có thể thay đổi giá trị ban đầu nhưng làm thế nào chúng ta có thể thay đổi nó
+            sau này?
+
+            Ví dụ khi chúng ta muốn gọi tăng. Tương đương với số đếm ++ là gì?
+
+            Hãy nhớ rằng chúng ta đã đề cập rằng mảng được trả về từ hàm này có hai mục.
+
+            Cái đầu tiên là một giá trị và cái thứ hai là
+
+            một hàm. Chúng ta có thể đặt tên cho hàm đó. Hãy gọi nó là setCount vì
+
+            về cơ bản đó là những gì nó sẽ làm.
+
+            Đây sẽ là hàm sẽ được sử dụng để cập nhật giá trị này bên trong trạng thái của chúng ta. Bên trong hàm tăng,
+            tôi
+
+            sẽ gọi setCount và tôi sẽ chuyển cho nó một
+
+            giá trị mới.
+
+            Vì vậy, giả sử có thể là 12.
+
+            Vì vậy, bây giờ chúng ta hãy theo dõi những gì sẽ xảy ra. Đầu tiên khi ứng dụng của tôi tải lên, tôi
+
+            gọi bạn là trạng thái và tôi cung cấp cho nó một giá trị ban đầu.
+
+            Giá trị này được lưu trữ bên trong số lượng biến này và nó được hiển thị bên trong h1 của chúng tôi.
+
+            Bây giờ khi người dùng nhấn vào nút này và onClick được kích hoạt, chức năng tăng sẽ được kích hoạt.
+
+            Và hàm tăng này sẽ gọi bộ đếm sẽ cập nhật trạng thái
+
+            của biến đếm của tôi và tôi đang đặt nó bằng 12.
+
+            Hãy tiếp tục và xem qua trang web của chúng tôi. Khi chúng tôi làm mới nó bắt đầu với giá
+
+            trị ban đầu này cho số lượng.
+
+            Và sau đó khi tôi nhấn nút dấu cộng, nó sẽ
+
+            được đặt thành bất kỳ thứ gì mà tôi đặt nó ở bên trong chức năng tăng.
+
+            Nhưng hãy để ý nếu tôi tiếp tục nhấn điều này không có gì xảy ra. Nó sẽ tiếp tục đặt
+
+            lại nó thành 12, điều này không hữu ích lắm cho một ứng dụng bộ đếm.
+
+            Thay vào đó chúng ta có thể làm gì?
+
+            Chúng ta hãy đặt
+
+            số đếm này thành 0 để bắt đầu, làm cho nó giống một bộ đếm hơn. Và sau đó tôi sẽ đặt số đếm của mình thành
+            giá trị hiện tại là số đếm + 1.
+
+            Vì vậy, hãy đếm + 1.
+
+            Và bây giờ khi tôi nhấn nút này, chúng tôi sẽ thấy rằng nó chỉ tăng 1 lần mỗi lần. Như một thử thách,
+
+            hãy tiếp tục và tạo một nút
+
+            khác ở đây và thay vì tăng giá trị, bạn muốn nó giảm giá trị.
+
+            Vì vậy, nó phải có một
+
+            dấu trừ bên trong và khi bạn nhấp vào nó, nó sẽ đi theo chiều ngược lại.
+
+            Hãy tạm dừng video ngay bây giờ và xem liệu bạn
+
+            có thể hoàn thành thử thách này được không. Vì vậy, chúng tôi có một chức năng tăng được gắn với nút dấu
+            cộng.
+
+            Nhưng chúng ta có lẽ cũng nên có một chức năng giảm gắn với nút trừ.
+
+            Bây giờ khi nút này được nhấp vào, chúng tôi kích hoạt hàm giảm và bên trong đây chúng tôi sẽ
+
+            gọi setCount là hàm sẽ cho phép chúng tôi cập nhật giá trị của số lượng.
+
+            Và chúng ta sẽ nói đếm - 1.
+
+            Vì vậy, bây giờ nếu chúng tôi cập nhật trang web của
+
+            mình và chúng tôi nhấn dấu cộng, nó sẽ đi lên, chúng tôi nhấn trừ nó sẽ đi xuống. Và điều này đạt được tất
+            cả bằng cách sử dụng hook useState. Tóm lại, trong bài học này, chúng tôi giới thiệu khái niệm trạng thái
+            này để có
+
+            tính tương tác trong ứng dụng của chúng tôi.
+
+            Và những gì chúng tôi đang cố gắng đạt được là để
+
+            trang web của chúng tôi có thể cập nhật động phản ánh trạng thái đã cập nhật.
+
+            Bây giờ trạng thái đến từ hook useState này và chức năng này đến từ mô-đun React.
+
+            Bây giờ khi lần đầu tiên chúng ta gọi hàm này, chúng ta phải xác định một giá trị ban đầu. Và sau đó chúng
+            ta sử dụng giá trị này bên trong mảng đã hủy của chúng
+
+            ta mà chúng ta gọi là số đếm.
+
+            Vì vậy, chúng tôi đang đặt giá trị của bộ đếm bên
+
+            trong h1 của chúng tôi và sau đó chúng tôi sẽ kích hoạt bộ đếm, đây là hàm sẽ cập nhật giá trị của bộ đếm.
+
+            Và chúng tôi làm điều đó khi người dùng nhấp vào nút dấu cộng của chúng tôi. Và chúng tôi đặt nó thành giá
+            trị hiện tại của số đếm
+
+            + 1, vì vậy nó sẽ tăng nó lên 1
+
+            mỗi lần.
+
+            Giờ đây, ý tưởng về hook có thể còn khá xa lạ với bạn nhưng một khi bạn quấn
+
+            lấy cơ chế của nó, nó cực kỳ mạnh mẽ và thực sự hữu ích khi bạn muốn tạo bất kỳ loại ứng dụng tương tác nào.
+
+            Bây giờ đừng lo lắng nếu bạn vẫn đang cố gắng nắm bắt khái niệm này vì nó là một cái gì
+
+            đó khá xa lạ và tôi khuyên bạn nên xóa tất cả mã mà
+
+            bạn có trong hộp cát mã của mình ngay bây giờ và sau đó. để tự tạo lại ứng dụng này từ đầu. Vì vậy, hãy xóa
+            mọi thứ bên
+
+            trong Ứng dụng. js và làm mới bản thân chỉ đơn giản
+
+            bằng cú pháp để bắt đầu vì nó trông khá lạ. Và trong bài học tiếp theo, tôi có một thách thức khác
+
+            cho bạn để thực hiện sử dụng State hook này.
+
+            Vì vậy, bạn sẽ được
+
+            thực hành nhiều và chúng ta cũng sẽ nói về việc cấu trúc lại một chút sau đó.
+
+            Bây giờ những gì tôi muốn bạn làm chỉ là làm quen với cú pháp. Có thể tự viết mã này từ đầu mà không
+
+            cần xem video và có
+
+            thể hiểu cách chúng tôi thực sự đến được đây ngay từ đầu.
+
+            Vì vậy, hãy tạm dừng video ngay bây giờ, chơi một vòng với hộp cát và tôi sẽ gặp lại bạn trong bài học tiếp
+            theo để thử thách.
+    </div>
+    <div>
+        <h1>Javascript ES6 Object & Array Destructuring</h1>
+        Này các cậu. Trong bài học này, tôi muốn đi qua khái niệm về cấu trúc hủy, vậy cấu trúc hủy đối tượng,
+
+        hủy cấu trúc mảng.
+
+        Và mục tiêu của bài học này là thực sự làm cho bạn hiểu rõ cách cấu trúc hoạt
+
+        động trong JavaScript ES6 và thực sự quen với cú pháp.
+
+        Bây giờ nếu bạn đã khá quen thuộc với khái niệm hủy cấu trúc này và bạn
+
+        đã sử dụng nó và bạn không gặp vấn đề gì khi sử dụng nó, thì hãy cứ hoàn thành thử thách và nếu bạn có thể
+
+        hoàn thành nó mà không gặp vấn đề gì thì hãy cảm nhận miễn bỏ qua bài học này.
+
+        Vì vậy, ý tưởng là bỏ ghi chú tất cả mã bên dưới dòng thử thách và điều chúng tôi muốn xảy ra là hiển thị các số
+        liệu thống kê
+
+        có được từ thực tiễn của chúng tôi. tệp js trong đó có một hằng số được gọi là ô tô. Và đây là một cấu trúc
+
+        tương đối phức tạp.
+
+        Đó là một mảng có hai đối tượng bên trong đối tượng.
+
+        Có các đối tượng lồng nhau khác và cũng có các mảng lồng nhau khác.
+
+        Vì vậy, ý tưởng là không thay đổi bất kỳ mã nào trong số này ở đây và cố gắng sử dụng các tên biến này để làm
+        cho điều này hoạt động bằng
+
+        cách cấu trúc mã từ thực tiễn của chúng tôi. tập tin js.
+
+        Đây là những gì bạn có thể đạt được sau khi hoàn thành thử thách.
+
+        Chúng tôi có bảng này ở đây với nhãn hiệu, tốc độ cao nhất và màu sắc hàng đầu. Và tất cả dữ liệu này đang được
+
+        lấy ra từ mảng ô tô của chúng tôi.
+
+        Mô hình tương ứng với cột đầu tiên này và sau đó tốc độ cao nhất tương ứng với thuộc tính
+
+        này topSpeed và màu trên cùng là màu đầu tiên trong mảng.
+
+        Bây giờ đừng lo lắng nếu bạn thấy những lỗi này trong bảng điều khiển. Nó không liên quan đến bất kỳ mã nào của
+        bạn.
+
+        Nó liên quan đến cách chúng tôi cấu trúc HTML của mình mà React không thích.
+
+        Nhưng tôi muốn giữ cho bảng đơn giản để chúng ta có thể tập trung vào việc cấu trúc lại.
+
+        Vì vậy, ý tưởng là làm cho lỗi biến mất mà không cần chạm vào bất kỳ mã hiện có nào và chỉ cần thêm một số mã
+
+        ngay tại đây để hủy cấu trúc mảng bên trong thực tế. js.
+
+        Và nếu bạn có thể hoàn thành điều này mà không gặp vấn đề gì, thì tôi rất vui khi bạn bỏ qua bài học này. Nhưng
+        nếu bạn không chắc nên bắt đầu từ
+
+        đâu
+
+        hoặc nếu bạn gặp khó khăn trong quá trình thử thách, thì tôi khuyên bạn nên xem video này, nơi tôi sẽ
+
+        đi sâu hơn vào cách cấu trúc các mảng lồng nhau cách cung cấp các giá trị mặc định và tất
+
+        cả những điều đó.
+
+        Vì vậy, hãy bắt đầu bằng cách tạo một bản sao của hộp cát bắt đầu. Và để bắt đầu, tôi thực sự sẽ bỏ qua toàn bộ
+
+        thử thách này và tôi sẽ tạo một khoảng trống cho
+
+        bản thân bên trong chỉ mục. js. Và chúng tôi sẽ không làm
+
+        việc với thực tế. dữ liệu js chưa.
+
+        Chúng ta sẽ bắt đầu sử dụng tệp được gọi là dữ liệu này. js. Và tôi muốn nhanh chóng nhắc lại một
+
+        số điều tôi đã nói khi lần đầu tiên giới thiệu với các bạn về khái niệm hủy cấu trúc này.
+
+        Vì vậy, ở đây chúng ta có một mảng được gọi là động vật và nó có hai đối tượng là mục đầu tiên và mục thứ hai.
+
+        Bây giờ, điều đầu tiên tôi sẽ làm là tôi sẽ xuất những con vật này làm mục xuất mặc định và sau đó tôi sẽ nhập
+        nó
+
+        vào chỉ mục của mình. js.
+
+        Được rồi.
+
+        Vì vậy, tôi đang lấy các con vật xen vào từ dữ liệu tệp của mình và bây giờ điều đầu tiên cần làm là tôi sẽ ghi
+
+        lại những con vật trông như thế nào vì đây có thể là những gì bạn sẽ làm khi
+
+        bạn đang xem dữ liệu đến từ một nhà cung cấp khác nói rằng một API hoặc một số loại mô-đun hoặc một số loại
+        khung
+
+        như React.
+
+        Vì vậy, chúng tôi nhận thấy rằng chúng tôi có hai đối tượng: một
+
+        là con mèo và một là con chó.
+
+        Vì vậy, điều đầu tiên tôi sẽ làm là tôi sẽ cấu trúc mảng động vật này thành một biến để tôi có thể giữ đối
+
+        tượng đầu tiên trong một biến có tên là mèo và đối tượng
+
+        thứ hai trong một biến có tên là chó.
+
+        Vì vậy, nếu bạn muốn thử, hãy tạm dừng video ngay bây giờ. Được rồi.
+
+        Vì vậy, để hủy cấu trúc này, tôi sẽ tạo một hằng số mới và vì tôi đang hủy
+
+        cấu trúc một mảng, các tên biến sẽ nằm bên trong một mảng theo
+
+        nghĩa đen như thế này, vì vậy hai dấu ngoặc vuông. Bây giờ mục đầu tiên trong mảng động vật đó nếu chúng ta nhớ
+        là một con
+
+        mèo và thứ hai là một con chó.
+
+        Vì vậy, tôi sẽ đặt chúng làm tên của mục đầu tiên và mục thứ hai từ mảng động vật này.
+
+        Vì vậy, bây giờ những gì mã của tôi đã làm là nó đạt được bên trong mảng động vật này, lấy ra mục đầu tiên
+
+        và gán cho nó tên là mèo, rút ra mục thứ hai và gán cho nó tên chó.
+
+        Nếu tôi quyết định ghi giá trị của cat, bạn có thể thấy nó chỉ là một đối tượng duy nhất có hai thuộc tính.
+
+        Vì vậy, tôi đã giải phóng nó khỏi mảng một cách hiệu quả. Và điều này khá giống với cách nói
+
+        var cat = animal [0].
+
+        Nó thực hiện chính xác những điều tương tự nhưng rõ ràng là theo một kiểu cú pháp ngắn gọn hơn nhiều.
+
+        Một điều khác cần nhớ là khi bạn hủy cấu trúc bất kỳ thứ gì nói rằng một mảng hoặc một đối tượng
+
+        thành các tên biến riêng biệt, những
+
+        tên này cần phải là duy nhất bên trong tệp của bạn.
+
+        Vì vậy, ví dụ: bạn không thể hủy cấu trúc mảng động vật này và lấy ra một thứ gì đó được giữ bên trong một biến
+
+        có tên là mèo và sau đó tạo một biến khác có tên là mèo. Bạn sẽ gặp lỗi nói rằng xác định con mèo đã
+
+        được sử dụng và khai báo. Vì vậy, những tên
+
+        này khi bạn hủy cấu trúc phải là duy nhất. Vì vậy, bây giờ chúng ta đã phá hủy mảng của mình, hãy nghĩ
+
+        về cách chúng ta có thể hủy cấu trúc một đối tượng. Vì vậy, chúng ta biết rằng con mèo của chúng ta bây giờ được
+        kéo ra khỏi động vật và nó thực sự
+
+        là một đồ vật đúng không?
+
+        Vì vậy, nếu chúng ta muốn phá hủy đối tượng này, chúng ta sẽ làm như thế nào?
+
+        Cú pháp cũng tương tự nhưng lần này vì chúng ta đang cấu trúc một đối tượng nên chúng ta sẽ tạo một đối tượng
+        theo nghĩa đen
+
+        bằng cách sử dụng một tập hợp các dấu ngoặc nhọn để thay thế. Và bên trong các dấu ngoặc nhọn này, chúng ta có
+        thể
+
+        lấy ra bất kỳ thuộc tính nào mà chúng ta muốn từ đối tượng. Vì vậy, chúng ta biết rằng đối tượng con mèo có hai
+        thuộc tính, một được
+
+        gọi là tên và một được gọi là âm thanh.
+
+        Vì vậy, nếu chúng ta muốn, chúng ta có thể lấy cả hai thuộc tính này, tên và âm thanh, và lấy nó ra khỏi đối
+
+        tượng mèo đó.
+
+        Bây giờ chúng ta có một biến được gọi là tên và một biến được gọi là âm thanh tương đương với cat. tên và con
+        mèo.
+
+        âm thanh.
+
+        Và nếu tôi quyết định ghi lại giá trị của âm thanh nói, bạn có thể thấy rằng tôi nhận được từ 'meo meo' được in
+        ra.
+
+        Và điều này cung cấp cho chúng tôi rất nhiều tiện lợi bởi vì đi từ mảng động vật ban đầu này,
+
+        để ghi lại âm thanh 'meo meo' này, chúng ta phải nói động vật [0]. âm thanh và chúng tôi sẽ phải làm điều này
+        mỗi khi chúng
+
+        tôi cần giá trị bên trong thuộc tính này. Nhưng hãy nhớ rằng có một sự khác biệt quan
+
+        trọng khi bạn hủy cấu trúc các đối tượng so với mảng.
+
+        Lưu ý rằng trong mảng, về cơ bản, chúng ta có thể gọi mỗi biến bị hủy này bằng bất kỳ
+
+        tên nào mà chúng ta muốn. Tôi có thể gọi cái này là c và gọi cái này là d.
+
+        Và tôi quyết định ghi nhật ký c, để ý xem nó vẫn tiếp tục ghi nhật ký mèo như thế nào. Nhưng khi bạn hủy cấu
+        trúc một đối tượng,
+
+        những tên bên trong này phải khớp với tên thuộc tính của đối tượng đó.
+
+        Bằng cách này, nó biết cái nào thực sự nên rút ra.
+
+        Vì vậy, chúng phải giống với các phím mà bạn thấy ở đây.
+
+        Bây giờ hãy để ý xem nếu tôi quyết định thay đổi điều này thành âm thanh động vật thay vì âm thanh thực
+
+        sự được gọi là âm thanh, điều này không còn hoạt động và nó in không xác định vì nó nhìn bên trong đối tượng này
+
+        cố gắng tìm giá trị cho khóa động vật này và rõ ràng là không có khóa được gọi là AnimalSound.
+
+        Vì vậy, điều này trở lại dưới dạng không xác định thay thế. Giờ đây, việc hủy cấu trúc cũng có thể hữu ích cho
+        những thứ khác.
+
+        Ví dụ: nếu bạn thực sự muốn đặt tên khác cho các biến này với tên gọi là thuộc tính của đối
+
+        tượng, bạn có thể làm điều đó.
+
+        Bạn chỉ cần thêm dấu hai chấm và nói cái này sẽ được
+
+        gọi là catName và cái này sẽ được gọi là catound.
+
+        Vì vậy, bây giờ những gì sẽ xảy ra là bạn không còn có quyền truy cập vào các tên và tên biến này nữa.
+
+        Thay vào đó, bạn đã biến nó thành catSound phát ra tiếng kêu meo meo và catName phát ra như mèo.
+
+        Đây là một cách cung cấp tên thay thế cho các thuộc tính đến từ một đối tượng.
+
+        Và điều này thực sự hữu ích, đặc biệt khi bạn nắm giữ dữ liệu từ các API công khai, nơi bạn không
+
+        thực sự có cơ hội đặt tên cho các thuộc tính bên trong các JSON đó.
+
+        Đôi khi chúng có ý nghĩa, đôi khi chúng không.
+
+        Đôi khi chúng rất ngắn và nếu bạn muốn tạo cảm giác của riêng mình thì đây là cách bạn
+
+        có thể làm. Bây giờ
+
+        điều khác mà tôi muốn cho bạn thấy là cách bạn cung cấp một giá trị mặc định.
+
+        Ví dụ: nếu chúng tôi định cấu trúc lại đối tượng mèo và chúng tôi đặt tên và âm thanh của chúng tôi
+
+        bằng mèo, nhưng tôi
+
+        muốn đặt tên và âm thanh một giá trị tùy chỉnh.
+
+        Làm thế nào tôi có thể làm điều đó?
+
+        Vâng, bạn có thể đơn giản chỉ cần thêm vào một dấu bằng, nói tên bằng, hãy gọi
+
+        nó là tôi không biết, Fluffy và âm thanh bằng Purr.
+
+        Vì vậy, bây giờ những gì
+
+        sẽ xảy ra khi tôi đăng nhập tên là nó xuất hiện dưới dạng con mèo vì đó là giá trị cho tên từ con mèo đối tượng
+        này.
+
+        Nhưng nếu nó không có tên, giả sử chúng ta đi vào dữ liệu,
+
+        tôi xóa tên và quay lại, sau đó nhận thấy nó hiện đang được in như thế nào.
+
+        Vì vậy, về cơ bản điều này cho biết nếu tên không được xác định, thì hãy sử dụng giá trị này để thay thế. Và
+        điều này cũng thực sự hữu ích vì đôi khi khi bạn
+
+        lấy lại dữ liệu từ Internet, rất nhiều trường này có thể không được lấp
+
+        đầy.
+
+        Vì vậy, bạn không muốn ứng dụng hoặc trang web của mình gặp sự cố.
+
+        Bạn muốn cung cấp cho nó một số giá trị mặc định để nó thực sự được hiển thị. Bây giờ, điều cuối cùng tôi muốn
+
+        cho bạn thấy liên quan đến việc hủy cấu trúc các đối tượng là phải
+
+        làm gì khi bạn có một đối tượng lồng nhau. Vì vậy, giả sử rằng ngoài tên thuộc tính và
+
+        âm thanh, chúng ta còn có một thuộc tính khác được gọi là feedRequirements. Và thuộc tính này sẽ chứa đối tượng
+        của chính nó và nó có thuộc tính gọi là
+
+        thức ăn và một thuộc tính khác gọi là nước.
+
+        Vì vậy, giả sử rằng thức ăn là hai lần một ngày và chúng phải được tưới nước ba lần một ngày.
+
+        Vì vậy, trong trường hợp này, bây giờ chúng ta có một đối tượng có một đối tượng bên trong nó.
+
+        Vì vậy, làm thế nào chúng ta sẽ phá hủy các đối tượng lồng nhau này?
+
+        Giả sử rằng tôi muốn ghi lại số lần tôi phải cho mèo ăn.
+
+        Vì vậy, tôi muốn có thể ghi lại giá trị của thức ăn sống bên trong đối tượng mèo này. Chúng ta bắt đầu với const
+        và đối tượng
+
+        mèo của chúng ta nhớ có hai thuộc tính đó là tên và âm thanh.
+
+        Vì vậy, chúng ta hãy tiếp tục và cấu trúc nó xuống để đặt tên và âm thanh.
+
+        Nhưng bây giờ chúng ta có thêm một cái gọi là feedRequirements, vì vậy chúng ta hãy thêm nó vào đây.
+
+        Vì vậy, bây giờ chúng ta hãy đặt
+
+        nó bằng cat và nếu tôi tiếp tục và ghi lại giá trị của feedRequirements, bạn có thể thấy rằng
+
+        tôi nhận được đối tượng này đang được ghi lại đúng không?
+
+        Nó có thức ăn và nước như thuộc tính.
+
+        Bây giờ tôi có thể nếu tôi muốn cầm thức ăn bằng cách đơn giản viết các yêu cầu cho ăn. thức ăn là cú pháp thông
+        thường của chúng
+
+        tôi.
+
+        Nhưng điều gì sẽ xảy ra nếu tôi chỉ muốn nắm giữ thức ăn một mình mà không cần phải sử dụng cú pháp dấu chấm
+
+        để tái cấu trúc nó một cách hiệu quả?
+
+        Làm thế nào tôi sẽ làm điều đó?
+
+        Chà, bạn có thể chỉ cần đặt feedRequirements này thay vì đặt cho nó một cái tên khác, bạn mở một tập
+
+        hợp các dấu ngoặc nhọn và bạn kéo ra các giá trị bên trong.
+
+        Vì vậy, những thứ đó được gọi là thức ăn và nước uống.
+
+        Vì vậy, bây giờ nếu bạn điều khiển thức ăn trong nhật ký, bạn sẽ tính được số lần mèo cần được cho ăn.
+
+        Và điều này được thực hiện thông qua một cấu trúc phá hủy rộng rãi.
+
+        Vì vậy, chúng tôi đã nắm giữ đối tượng cat của chúng tôi là đối tượng này, chúng tôi kéo đối tượng
+        feedRequirements ra khỏi đối
+
+        tượng đó, chúng tôi tiếp tục hủy nó để
+
+        chúng tôi có một biến gọi là food được đặt thành giá trị là hai và nước được đặt đến giá
+
+        trị của ba.
+
+        Bây giờ hãy nhớ rằng bạn có thể hủy cấu trúc nhiều hoặc ít tùy ý.
+
+        Vì vậy, ví dụ như đối với con mèo của chúng tôi, nếu tôi chỉ muốn các yêu cầu cho ăn bị hủy bỏ, thì tôi có thể
+        làm điều đó.
+
+        Bạn không cần phải làm điều đó cho tất cả các khóa và giá trị bên trong một đối tượng.
+
+        Vì vậy, hy vọng rằng mọi thứ sẽ rõ ràng hơn một chút và bạn đã có một số ý tưởng mới về
+
+        cách hủy cấu trúc mảng và cách hủy cấu trúc các đối tượng.
+
+        Vì vậy, điều tiếp theo tôi muốn cho bạn thấy một chút về cách hàm các trạng thái bộ có thể trông như thế nào.
+        Nếu bên trong dữ liệu
+
+        của chúng tôi. js giả sử rằng chúng ta đã có một hàm và nó được gọi là useAnimals.
+
+        Điều này nghe có vẻ giống như một số hành vi ngược đãi động vật nhưng không phải vậy.
+
+        Không có động vật nào bị hại trong hàm này nhưng những gì chúng ta sẽ làm là chúng ta sẽ chấp nhận một
+
+        động vật làm đầu vào cho hàm này và chúng ta sẽ trả về một mảng. Mảng này chỉ có hai
+
+        giá trị. Nó sẽ là một con vật. tên và một chức năng.
+
+        Vì vậy, chức năng này sẽ điều khiển ghi nhật ký động vật. âm thanh. Vì vậy, nó sẽ tạo ra âm thanh hiệu quả
+
+        phải không?
+
+        Bây giờ chúng ta đã tạo hàm này được gọi là useAnimals và nó trả về một mảng có hai mục, một là
+
+        chuỗi tên của con vật và hàm kia là một
+
+        hàm thực hiện một cái gì đó. Khi nó được kích hoạt,
+
+        nó chỉ phát ra âm thanh.
+
+        Bây giờ nếu chúng ta tiếp tục và xuất hàm này, hãy useAnimals và chúng ta quay trở lại bên trong chỉ mục của
+        mình. Có phải bây giờ chúng ta có thể nhập nó theo cùng một kiểu cú pháp như
+
+        khi chúng ta nhập useState của mình phải không? Bằng cách gắn thẻ sau khi xuất mặc
+
+        định như vậy. Bây giờ, hãy giả sử rằng tôi đã quyết định sử
+
+        dụng hàm này được gọi là useAnimals và chuyển con mèo đối tượng động vật của tôi vào bên trong.
+
+        Bây giờ nếu tôi tiếp tục
+
+        và ghi lại giá trị của useAnimals với mèo này, thì bạn có thể thấy rằng những gì được ghi là một mảng có hai
+        mục.
+
+        Mục đầu tiên là chuỗi mèo và mục thứ hai là một hàm.
+
+        Bây giờ tôi biết rằng đầu ra của hàm này là một mảng, tôi có thể đơn giản chỉ cần hủy cấu trúc nó phải không?
+
+        Vì vậy, tôi có thể tạo một const, thêm một tập hợp các dấu ngoặc vuông để tạo một mảng
+
+        theo nghĩa đen, vì vậy mục đầu tiên ở đây sẽ là tên của mục đầu tiên của mảng mà tôi sẽ gọi là động vật.
+
+        Và mục thứ hai sẽ được gán giá trị của hàm.
+
+        Vì vậy, tôi sẽ gọi hàm makeSound. Và sau đó tôi sẽ đặt nó bằng đầu
+
+        ra của hàm useAnimals với mèo này.
+
+        Bây giờ nếu tôi điều khiển động vật ghi nhật ký, bạn có thể thấy rằng tôi sẽ in mèo ra. Và nếu tôi tiếp tục
+
+        và nắm lấy makeSound và tôi gọi nó, thì bạn sẽ thấy nó nói 'meo meo'. Vì vậy, tôi tưởng tượng, điều này sẽ
+
+        rất giống với cách useState sẽ trông như thế nào. Và tôi hy vọng bằng cách giải cấu trúc ví dụ của riêng chúng
+        tôi, bạn có thể
+
+        hiểu rõ hơn về cách mã cho useState đó thực sự hoạt động.
+
+        Vì vậy, bây giờ bạn đã học thêm rất nhiều về cấu trúc hủy, đã đến lúc hoàn thành thử thách này.
+
+        Hãy tạm dừng video ngay bây giờ và tôi sẽ chỉ cho bạn cách giải trong bài học tiếp theo.
+    </div>
+
+    <div>
+        <h1>Event Handling in React</h1>
+        Này các cậu. Trong bài học này, tôi muốn nói thêm một chút về việc xử lý các sự kiện trong React. Cách bạn có
+        thể phát hiện khi người dùng
+
+        tương tác với ứng dụng hoặc các thành phần của bạn và cách bạn có thể sử dụng React để hiển thị những thứ khác
+
+        nhau tùy thuộc vào các sự kiện đó.
+
+        Và đây là chức năng mà bạn sẽ xây dựng ở cuối bài học. Khi chúng ta di chuột qua nút, nó sẽ chuyển
+
+        sang màu đen và khi chúng
+
+        ta di chuột ra khỏi nó, nó sẽ chuyển sang màu trắng. Và để có thể triển khai chức năng này,
+
+        chúng ta sẽ tập hợp nhiều khái niệm khác mà chúng ta đã đề cập trong các bài học
+
+        trước bao gồm kết xuất có điều kiện, tạo kiểu nội tuyến, sự kiện chuột và trạng thái quản lý.
+
+        Vì vậy, hãy tiếp tục và phân nhánh hộp cát bắt đầu và sau đó chúng ta có thể bắt đầu.
+
+        Tôi có một biểu mẫu rất đơn giản mà tôi đã tạo ở đây mà bạn sẽ nhận thấy nó được mượn một phần từ màn hình đăng
+
+        nhập và đăng ký trước đó của chúng tôi.
+
+        Tất cả những gì nó có là một h1 hiện chỉ nói xin chào.
+
+        Nó có đầu vào là văn bản kiểu và trình giữ chỗ yêu cầu nhập tên.
+
+        Cuối cùng, nó cũng có một nút gửi.
+
+        Vì vậy, chỉ cần ba thành phần, rất đơn giản.
+
+        Bây giờ chúng ta đã thấy trước đây rằng bạn có thể khai thác vào các sự kiện rất đơn giản, chẳng hạn như khi
+
+        một nút được nhấp qua các thuộc tính cho các phần tử HMTL đó.
+
+        Vì vậy, thuộc tính mà chúng tôi đã và đang sử dụng là onClick.
+
+        Và hãy nhớ lại khi chúng ta chuyển đổi các phần tử HMTL thành JSX hoặc Thành phần React, tên của các thuộc
+        tính
+
+        sẽ được chuyển thành trường hợp lạc đà.
+
+        Vì vậy, khi nút được nhấp thì chúng tôi muốn kích hoạt một số mã. Vì vậy, chúng tôi có thể có một chức năng
+
+        trong ứng dụng của mình được gọi là handleClick.
+
+        Và khi chức năng này được kích hoạt, tất cả những gì chúng ta sẽ làm bây giờ chỉ là nhấn vào để in. Và sau
+        đó tôi sẽ chuyển tên
+
+        của hàm này làm hành động sẽ được bắt đầu khi nút này
+
+        được nhấp.
+
+        Bây giờ bất cứ khi nào tôi nhấp vào nút gửi, bạn sẽ nhận thấy trong bảng điều khiển, chúng tôi sẽ ghi lại từ
+        đã nhấp vào.
+
+        Và điều này xảy ra mỗi khi tôi nhấn vào nút này.
+
+        Đây là manh mối mà chúng ta thực sự có thể khai thác vào chức năng này và kích hoạt bất kỳ loại mã nào
+
+        chúng ta muốn được gắn với nút này đang được nhấp vào.
+
+        Bây giờ chúng ta có thể muốn làm những việc gì?
+
+        Có lẽ chúng tôi muốn thay đổi văn bản trong h1 của chúng tôi.
+
+        Vì vậy, ví dụ thay vì chỉ có từ xin chào ở đây, có thể tôi sẽ
+
+        có một biến có tên là Tiêu đề văn bản. Và headerText này tất nhiên là một thứ gì đó sẽ có trạng thái bởi
+
+        vì nó sẽ thay đổi khi nút được nhấp.
+
+        Vì vậy, tôi sẽ tạo headerText trạng thái mới của mình và cũng là một phương pháp để thiết lập
+        headerText.
+
+        Vì vậy, tôi đã có headerText và setHeadingText
+
+        và đây là cách phổ biến mà mọi người có xu hướng đặt tên cho các biến trạng thái này và
+
+        cả hàm để thiết lập trạng thái khi họ sử dụng hook.
+
+        Và sau đó tôi sẽ đặt nó thành trạng thái sử dụng. Và ngay sau khi tôi nhấn enter, trạng thái sử dụng của
+        tôi
+
+        sẽ tự động được nhập từ React vì tôi đang sử dụng hộp cát mã.
+
+        Nhưng nếu bạn không sử dụng hộp cát mã, hãy nhớ thêm lần nhập đó.
+
+        UseState này tất nhiên là một hàm và bên trong dấu ngoặc đơn, tôi có thể
+
+        cung cấp cho nó một giá trị bắt đầu. Vì vậy, hãy đặt nó thành
+
+        chuỗi Xin chào.
+
+        Bây giờ để bắt đầu với h1 của tôi, chỉ cần nói xin chào.
+
+        Và sau đó những gì tôi muốn xảy ra là khi nút này được nhấp vào, tôi muốn thay đổi
+
+        từ này thành được gửi.
+
+        Tôi có thể làm điều đó bằng cách sử dụng hàm setHeadingText mà tôi đã tạo và tôi sẽ thay đổi
+
+        văn bản tiêu đề để gửi.
+
+        Vì vậy, bây giờ bất cứ khi nào tôi nhấp vào nút này, h1 của tôi sẽ được cập nhật lên một giá trị
+        mới là từ được gửi.
+
+        Nhưng có những sự kiện nào khác?
+
+        Chúng ta có thể phản hồi điều gì khác ngoài một nút đang được nhấp? Nếu bạn xem tài
+
+        liệu trên w3schools. com về các thuộc tính sự kiện HTML, bạn
+
+        có thể thấy rằng có vô số chúng mà bạn có thể chọn. Và một thứ có thể khá hữu ích cho chúng ta
+        là thứ được gọi khi di chuột ra ngoài và di chuột qua.
+
+        Điều này cho phép chúng tôi phát hiện khi con chuột đang di chuột qua hoặc đã di chuột ra khỏi
+        một phần tử cụ thể.
+
+        Được rồi.
+
+        Vì vậy, tại thời điểm này, tôi muốn đặt ra một thử thách khó khăn hơn cho bạn. Xem liệu bạn có
+        thể thêm thuộc tính on
+
+        mouse over và on mouse out vào nút của chúng tôi tại đây để kết quả cuối cùng là có thể đưa con
+        chuột của
+
+        bạn di chuột qua nút gửi và để nó thay đổi màu nền từ trắng sang đen.
+
+        Nhưng ngay sau khi con chuột của bạn rời khỏi nút, màu nền của nút
+
+        sẽ chuyển trở lại màu trắng. Và bạn sẽ sử dụng hai thuộc tính này. Nếu bạn đã biết cách giải
+        quyết thử thách này, hãy
+
+        tạm dừng video ngay bây giờ.
+
+        Nếu không, tôi sẽ cho bạn một gợi
+
+        ý khác sau vài giây.
+
+        Được rồi.
+
+        Đây là gợi ý đầu tiên của tôi.
+
+        Hãy nhớ rằng bạn có thể thay đổi giao diện của một phần tử HTML bằng cách sử dụng thuộc tính
+        style.
+
+        Vì vậy, bạn có thể đặt nó thành, ví dụ, một đối tượng mới trong đó khóa là kiểu mà bạn muốn thay
+        đổi,
+
+        vì vậy trong trường hợp này, đó là màu nền.
+
+        Nhưng hãy nhớ vì đây là Javascript, chúng ta phải sử dụng phiên bản có vỏ camel của nó và sau đó
+
+        chúng ta đặt nó bằng một chuỗi.
+
+        Vì vậy, tôi sẽ đặt nó bằng màu đen.
+
+        Và bây giờ bạn sẽ thấy rằng nút của tôi chuyển sang màu đen. Nhưng tất nhiên đây không phải là
+        mục tiêu.
+
+        Mục đích là nó chỉ thay đổi nó thành màu đen
+
+        khi con chuột của tôi đang di chuột vào bên trong và sau đó thay đổi nó trở lại màu trắng ở nơi
+        con chuột của tôi không di chuột vào
+
+        bên trong.
+
+        Vì vậy, bạn sẽ phải sử dụng các sự kiện khi di chuột ra và
+
+        di chuột qua các sự kiện cũng như thuộc tính style để thay đổi màu nền thành đen hoặc trắng.
+
+        Nhưng ngoài ra, bạn sẽ phải suy nghĩ về cách bạn sẽ quản lý trạng thái và cũng như cách
+
+        hiển thị có điều kiện một màu nền khác.
+
+        Vì vậy, có rất nhiều thứ trong đó nhưng tôi chắc rằng bạn có thể làm được.
+
+        Tạm dừng video và thử xem.
+
+        Và khi bạn đã hoàn thành, hãy quay lại và chúng ta sẽ cùng nhau vượt qua.
+
+        Được rồi.
+
+        Vì vậy, đây là giải pháp cho thách thức.
+
+        Vì vậy, điều đầu tiên cần làm là áp dụng sự kiện onmouseover cho nút của chúng ta.
+
+        Vì vậy, điều đó sẽ đi vào đúng như onClick đã được thêm vào, vì
+
+        vậy nó sẽ là một thuộc tính.
+
+        Và hãy nhớ bởi vì chúng ta đang sử dụng JSX, những cái tên này đều được viết bằng vỏ lạc đà. Vì
+        vậy, onmouseover và chúng tôi sẽ làm cho nó kích
+
+        hoạt một chức năng. Và chức năng đó tôi
+
+        sẽ tạo ngay dưới cú nhấp chuột vào tay cầm của tôi và bạn có thể gọi bất
+
+        cứ thứ gì nhưng tôi sẽ gọi nó là handleMouseOver. Và đó là những gì sẽ kích hoạt khi người dùng
+        di chuột qua nút này. Và để kiểm tra và đảm bảo
+
+        rằng nó thực sự hoạt
+
+        động, hãy tiếp tục và đăng nhập lại.
+
+        Và bây giờ ngay khi bạn thấy con trỏ của tôi di chuyển vào ranh giới của nút, thì chúng ta
+
+        sẽ có nhật ký 'Moused over'. Và điều này xảy ra mỗi khi con chuột của tôi đi từ ngoài vào trong.
+
+        Được rồi.
+
+        Vì vậy, hiện chúng tôi đã xác nhận rằng sự kiện di chuột qua của chúng tôi đang được xử lý chính
+        xác và chúng tôi có thể kích
+
+        hoạt chức năng này khi điều đó xảy ra.
+
+        Điều tiếp theo chúng ta muốn làm là tạo một số loại biến có thể giữ trạng thái cụ thể là trạng
+
+        thái liệu chúng ta có nên thay đổi màu nền hay không.
+
+        Vì vậy, tôi sẽ tạo một hằng số mới và tôi sẽ gọi trạng thái đó là isMousedOver.
+
+        Và tôi cũng sẽ thêm một chức năng để có thể thiết lập nó. Vì vậy, setMouseOver. Và sau đó tôi sẽ
+        làm
+
+        cho nó bằng với useState và giá trị bắt đầu sẽ là false.
+
+        Vì vậy, thông thường khi trang web tải lên, con chuột của bạn sẽ không ở bên trong nút phải
+        không?
+
+        Nhưng khi kích hoạt chuột qua của chúng ta gọi phương thức này là handleMouseOver, và chỉ sau đó
+
+        chúng ta mới đặt chuột qua.
+
+        Vì vậy, hãy gọi phương thức mà chúng ta đã tạo ở đây và sau đó chúng ta sẽ đặt nó thành true.
+
+        Bây giờ chúng ta có thể sử dụng isMousedOver này để xem chúng ta nên kết xuất màu gì cho nền của
+        nút.
+
+        Vì vậy, điều đó có nghĩa là nếu thuộc tính isMousedOver bằng true, thì chúng tôi sẽ đặt màu nền
+        thành màu đen nhưng nếu nó không
+
+        đúng thì tôi sẽ thấy. e. nếu không, chúng tôi sẽ đặt nó thành màu trắng.
+
+        Vì vậy, bây giờ nếu bạn tiếp tục và làm mới nó, bạn sẽ thấy rằng nó bắt đầu có
+
+        màu trắng nhưng ngay khi con chuột của tôi đi vào và di chuột qua nút, nó sẽ chuyển sang màu
+        đen.
+
+        Nhưng rất tiếc, chúng tôi không có cách nào để thay đổi nó vào lúc này vì chúng tôi chưa triển
+
+        khai sự kiện khi di chuột ra ngoài.
+
+        Vì vậy, chúng ta hãy tiếp tục và làm điều đó.
+
+        Và hãy nhớ rằng nếu trước đây bạn gặp khó khăn và bạn không thể di chuột qua để hoạt động, thì
+        bây giờ bạn đã thấy
+
+        cách nó hoàn thành, hãy
+
+        tiếp tục và xem liệu bạn có thể quay lại và thêm sự kiện on mouse out hay không. Sự kiện khi di
+        chuột ra được thêm theo cách tương tự
+
+        như khi di chuột qua.
+
+        Vì vậy, chúng tôi sẽ chỉ phải đảm bảo rằng chúng tôi đánh vần đúng, onMouseOut, và chúng tôi sẽ
+        làm cho nó kích hoạt
+
+        một chức năng khác.
+
+        Và cái này tôi sẽ gọi là handleMouseOut và bên trong hàm này, tôi sẽ đặt thuộc tính isMousedOver
+
+        trở lại false.
+
+        Vì vậy, tôi sẽ gọi setMouseOver và đặt nó thành false. Và sau đó tôi sẽ đảm bảo rằng tôi gọi
+
+        hàm này khi onMouseOut được kích hoạt.
+
+        Vì vậy, bây giờ khi tôi di chuột vào nút, nó sẽ chuyển sang màu đen. Khi con chuột của tôi rời
+        khỏi nó, nó lại chuyển sang màu trắng. Và chúng tôi có thể làm điều
+
+        này vì tất cả kiến thức mà chúng tôi đã xây dựng bao gồm kết xuất có điều kiện bằng cách sử dụng
+
+        toán tử bậc ba ở đây, thiết lập các kiểu nội tuyến trong thành phần của chúng tôi, sử dụng trình
+        xử lý sự kiện chẳng hạn như khi
+
+        di chuột qua khi di chuột ra, cũng như trạng thái cài đặt và sử dụng. Bây giờ trong bài học tiếp
+        theo, chúng ta sẽ xem xét thêm
+
+        về cách sử dụng các biểu mẫu trong React. Và làm thế nào để có thể tiếp nhận và xử lý các sự
+        kiện phát sinh
+
+        từ các đầu vào này trong một biểu mẫu.
+
+        Vì vậy, cho tất cả những điều đó và hơn thế nữa, tôi sẽ gặp bạn ở đó.
+    </div>
+    <div>
+        <h1>React Forms</h1>
+        Tất cả các quyền.
+
+        Trong bài học trước, bạn đã thấy cách chúng ta có thể xử lý các sự kiện đơn giản như nhấp vào nút hoặc di
+
+        chuột qua nó.
+
+        Bây giờ trong bài học này, tôi muốn nói về một số sự kiện phức tạp hơn, chẳng hạn như các sự kiện phát sinh từ
+
+        bên trong một biểu mẫu.
+
+        Bây giờ, khi bạn đang tạo các ứng dụng web, bạn sẽ phải tạo các biểu
+
+        mẫu để đăng nhập, đăng ký, liên hệ và
+
+        có một số đặc thù khá phổ biến. Để thực sự hiểu cách thức hoạt động của biểu
+
+        mẫu, chúng ta cần kết hợp kiến thức của mình về việc thiết lập trạng thái và sử dụng trạng thái.
+
+        Vì vậy, trong bài học này, tôi muốn giải quyết cách bạn có thể lấy thông tin đầu vào của người dùng từ phần tử
+        đầu vào và cách bạn có
+
+        thể sử dụng nút gửi để sử dụng thông tin mà người dùng đã nhập. Cũng giống như sự kiện onClick mà chúng tôi có
+
+        thể thêm vào nút gửi của mình, chúng tôi cũng có một
+
+        sự kiện trên các đầu vào được gọi là onChange và điều này được kích hoạt mỗi khi giá trị của đầu vào
+
+        thay đổi, vì
+
+        vậy khi người dùng nhập nội dung mới bên trong. Vì vậy, chúng ta có thể tạo một hàm có tên
+
+        là handleChange sẽ được kích hoạt mỗi khi đầu vào được thay đổi.
+
+        Hãy tiếp tục và ghi lại Changed và chuyển tên của hàm này cho onChange của chúng ta.
+
+        Bây giờ khi tôi bắt đầu nhập bên trong đầu vào này, cụ thể là thay đổi nó, bạn sẽ thấy rằng thay đổi tay cầm của
+
+        tôi được gọi mỗi khi tôi thêm một chữ cái mới.
+
+        Bây giờ điều này không hữu ích lắm vì điều chúng tôi quan tâm hơn thực sự là những gì người dùng được gõ
+
+        hơn là thực tế là họ đã bắt đầu nhập.
+
+        Điều khác cần biết là khi phần tử đầu vào của bạn kích hoạt hàm được lưu
+
+        trữ trong
+
+        Thay đổi đang bật, nó cũng chuyển qua một đối tượng. Và đối tượng đó tương ứng với sự kiện đã kích hoạt onChange
+        này.
+
+        Và chúng tôi có thể ghi lại những thứ khác nhau liên quan đến sự kiện đó.
+
+        Ví dụ, chúng ta có thể ghi nhật ký sự kiện. Mục tiêu. giá trị và hãy nhớ rằng sự kiện là sự
+
+        kiện đã kích hoạt
+
+        onChange, mục tiêu là phần tử đã kích hoạt sự kiện này và giá trị hoặc bất kỳ thuộc tính nào khác trên
+
+        mục tiêu
+
+        là những thứ tương ứng với giá trị của một số thuộc tính này.
+
+        Ví dụ ngoài sự kiện. Mục tiêu. giá trị, chúng tôi cũng có thể nắm giữ
+
+        chỗ dành sẵn của phần tử đã kích hoạt sự kiện hoặc loại phần tử đã kích hoạt sự kiện.
+
+        Và nếu tôi nhấn lưu và bắt đầu nhập, bạn sẽ thấy rằng mỗi khi tôi nhập một ký tự mới,
+
+        điều đầu tiên được in là giá trị.
+
+        Thứ hai là người giữ chỗ của tôi.
+
+        Và thứ ba là loại.
+
+        Và điều này xảy ra mỗi khi tôi gõ một chữ cái mới.
+
+        Vì vậy, chúng ta hãy loại bỏ hai cái kia và tập trung vào sự kiện của chúng ta. Mục tiêu. giá trị.
+
+        Nếu tôi bắt đầu nhập, bạn có thể thấy rằng mỗi lần tôi nhập một ký tự mới, handleChange đang được kích
+
+        hoạt chuyển qua sự kiện đã kích
+
+        hoạt thay đổi và tôi đang ghi giá trị hiện tại tương ứng với văn bản tồn tại trong đầu vào cụ thể này.
+
+        Bây giờ, điều gì sẽ xảy ra nếu tôi muốn sử dụng giá trị này mà người dùng được nhập ở một nơi khác bên trong ứng
+        dụng của tôi hoặc thành phần của tôi?
+
+        Vì vậy, nếu tôi muốn thay đổi lời chào của
+
+        mình, vì vậy thay vì
+
+        nói xin chào, nó thực sự tương ứng với những gì được nhập vào đầu vào.
+
+        Để làm được điều đó, tất nhiên tôi cần phải có trạng thái trong ứng dụng của mình.
+
+        Vì vậy, hãy tiếp tục và tạo một hằng
+
+        số mới và sau đó hãy cấu trúc lại đầu ra của chúng ta bốn useState của chúng ta để giữ hai thứ.
+
+        Một sẽ là tên và thứ hai sẽ là hàm setName sẽ giúp tôi cập
+
+        nhật hằng số tên này.
+
+        Tôi sẽ đặt điều này thành trạng thái sử dụng và khi tôi gọi hàm này, tôi sẽ cung cấp một giá trị
+
+        bắt đầu mà thực tế sẽ không là gì cả, một chuỗi rỗng.
+
+        Và hãy nhớ thêm useState vào phần nhập khi bạn đang sử dụng chức năng này. Bây giờ tôi có thể sử dụng tên hằng
+        này bên
+
+        trong H1 h1 của mình. Và tôi sẽ thêm
+
+        nó vào ngay cuối sau lời chào. Vì vậy, mở một tập hợp các dấu ngoặc nhọn, chèn giá trị của
+
+        tên biến vào bên trong ở đây vào cuối và bây giờ điều tôi sẽ làm là bất cứ khi nào một thay đổi xử lý được
+        gọi, tôi sẽ gọi setName và tôi
+
+        sẽ vượt qua trên giá trị của sự kiện. Mục tiêu. giá trị.
+
+        Vì vậy, bây giờ khi tôi bắt đầu viết, bạn có thể thấy rằng tôi đang cập nhật trạng thái của biến tên đó
+
+        và sau đó nó được
+
+        thêm vào h1 của tôi khi tôi nhập. Bây giờ chỉ có một điều cần nhớ về các biểu mẫu. Trong HTML, bản thân
+        các phần tử chịu
+
+        trách nhiệm xử lý trạng thái của chính chúng.
+
+        Ví dụ, bạn có thể nhớ rằng có một thuộc tính được gọi là giá trị.
+
+        Và điều này tương ứng với những gì hiện đang có bên trong đầu vào.
+
+        Bây giờ trong HTML, giá trị này thường được xử lý bởi thuộc tính đầu vào và nó đặt nó thành bất cứ thứ
+        gì được
+
+        nhập vào đây.
+
+        Nhưng trong React, điều bạn thực sự nên làm là đặt giá trị cho biến đến từ sự kiện.
+
+        Mục tiêu. giá trị.
+
+        Trong
+
+        trường hợp của chúng
+
+        tôi, đó tất nhiên sẽ là tên thứ này. Bằng cách này, chúng ta có một nguồn chân lý duy nhất là trạng thái
+        của tên.
+
+        Vì vậy, bất cứ khi nào chúng ta sử dụng nó bên trong các thành phần khác hoặc khi chúng ta có nó làm giá
+
+        trị của các đầu vào, chúng đều tương ứng với cùng một thứ và chúng sẽ khớp với nhau.
+
+        Và điều này trong React lingo được gọi là một thành phần được kiểm soát.
+
+        Và tôi thực sự khuyên bạn nên xem qua liên kết này mà tôi sẽ thêm vào tài nguyên khóa học và đọc sơ qua
+        đoạn
+
+        này, nơi họ nói về khái niệm thành phần được kiểm soát này. Và đừng lo lắng nếu bạn nhìn thấy
+
+        tài liệu này vào năm 2019 khi tôi ghi lại điều này, chúng vẫn hiển
+
+        thị các thành phần lớp. Nhưng trong tương lai, hy vọng rằng họ sẽ cập nhật điều này để hiển thị các móc
+        thay thế.
+
+        Nhưng khái niệm là như nhau.
+
+        Chúng tôi phải thêm giá trị đến từ trạng thái của chúng tôi làm thuộc tính giá trị của đầu vào của chúng
+        tôi
+
+        và giữ một nguồn chân lý duy nhất.
+
+        Và về cơ bản đó là tất cả những gì cần có đối với ý tưởng về các thành phần được kiểm soát này.
+
+        Bây giờ đây là một thách thức cho bạn.
+
+        Điều gì sẽ xảy ra nếu tôi muốn có thể nhập tên và sau đó chỉ khi tôi nhấp vào nút Gửi, tên đó mới
+
+        được thêm vào h1 của tôi?
+
+        Xem liệu bạn có thể sử dụng những gì bạn đã học trong bài học này và bài học cuối cùng để hoàn thành
+        thử thách này không.
+
+        Chỉ là một gợi ý, bạn sẽ cần phát hiện các sự kiện trong nút gửi.
+
+        Có thể bạn sẽ cần một biến khác để theo dõi trạng thái và bạn cũng có thể phải lộn xộn với mã của
+        mình
+
+        cho đến khi bạn có thể làm cho nó hoạt động.
+
+        Hãy tạm dừng một video ngay bây giờ, xem thử rồi quay lại và chúng ta sẽ cùng nhau tìm hiểu câu trả
+        lời.
+
+        Được rồi.
+
+        Vì vậy, điều đầu tiên chúng ta cần làm là có lẽ chúng ta sẽ cần thêm trình nghe onClick vào nút gửi
+
+        của chúng ta.
+
+        Và khi nút này được nhấp, chúng tôi sẽ kích hoạt một chức năng mà tôi sẽ gọi là handleClick.
+
+        Bây giờ thì handleClick không cần xem dữ liệu sự kiện, nó
+
+        không quan tâm lắm.
+
+        Nó chỉ cần được kích hoạt khi người dùng nhấn vào nút này.
+
+        Vì vậy, đó là những gì chúng ta sẽ
+
+        chuyển đến ở đây, handleClick.
+
+        Và khi nút đó được nhấp, chúng ta muốn điều gì xảy ra?
+
+        Chà, chỉ trong thời điểm đó khi chúng tôi muốn nhận ra giá trị của sự kiện. Mục tiêu. giá trị đến từ
+        đầu
+
+        vào và sau đó đặt nó bên trong h1.
+
+        Vì vậy, thay vì sử dụng biến tên sẽ luôn được cập nhật khi chúng ta thay đổi giá trị của đầu vào
+        này, thay vào đó chúng
+
+        ta có thể sử dụng một biến khác. Có lẽ chúng ta có thể gọi nó là headerText. Và chúng tôi có thể
+        theo
+
+        dõi trạng thái của headerText bằng cách sử dụng hook sử dụng của chúng tôi.
+
+        Và chúng ta sẽ có một phương thức khác được gọi là setHeading và chúng ta sẽ đặt nó bằng
+        useState và giá
+
+        trị ban đầu cũng sẽ là một chuỗi trống.
+
+        Chúng tôi không muốn bất cứ điều gì hiển thị sau từ xin chào.
+
+        Tuy nhiên, khi nút gửi được nhấp và chúng tôi muốn xử lý tốt lần nhấp đó thì chúng tôi
+
+        muốn đặt tiêu đề của mình thành giá trị tên của chúng tôi.
+
+        Vì vậy, chúng tôi đang sử dụng biến tên này và đặt nó làm văn bản tiêu đề.
+
+        Vì vậy, một lưu ý nhanh ở đây là khi bạn đang viết một hàm, bạn có thể chỉ cần sử dụng
+
+        tên của biến.
+
+        Bạn không cần dấu ngoặc nhọn xung quanh nó.
+
+        Và trên thực tế, nếu bạn thêm dấu ngoặc nhọn, thì bạn sẽ đặt văn bản tiêu đề của mình
+
+        thành một đối tượng Javascript thay vì chỉ là một giá trị, như vậy.
+
+        Vì vậy, đó là điều cần phải cẩn thận.
+
+        Và nếu nghi ngờ, bạn luôn có thể sử dụng câu lệnh nhật ký để ghi lại {name} trông như thế
+
+        nào là một đối tượng so với thuộc tính name chỉ là giá trị thực.
+
+        Khi chúng ta đã đặt tiêu đề thì giá trị của tên tại thời điểm này sẽ trở thành văn bản tiêu đề
+        và sau
+
+        đó văn bản tiêu đề sẽ hiển thị trong h1 của chúng tôi.
+
+        Và nếu chúng tôi kiểm tra và nhấp vào gửi thì bạn có thể thấy đây là cách nó hoạt động. Bạn
+        đã quản lý để làm cho nó
+
+        đúng?
+
+        Nếu không, hãy quay lại mã của bạn và xem liệu bạn có thể sửa nó và làm cho nó hoạt động hay
+        không.
+
+        Bây giờ, điều cuối cùng tôi muốn cho bạn thấy liên quan đến các biểu mẫu là thông thường
+        chúng ta đã quen với
+
+        việc đặt các đầu vào và các nút gửi của chúng ta bên trong một thành
+
+        phần biểu mẫu HTML và vì vậy nó sẽ trông giống như thế này. Và có thể bạn sẽ đặt loại nút để
+        gửi để nếu
+
+        bạn có nhiều nút thì chỉ có loại này sẽ kích hoạt việc gửi biểu mẫu.
+
+        Nhưng ngay cả khi tôi không gửi loại này, hãy lưu ý điều gì sẽ xảy ra khi tôi có một nút bên
+        trong một thành phần biểu mẫu và
+
+        tôi nhấp vào nó.
+
+        Vì vậy, nếu tôi tiếp tục và nhập tên của mình vào đây, tôi hy vọng nó sẽ hiển thị trong h1
+        , nhưng nếu tôi nhấp vào gửi ngay bây giờ, hãy xem cách
+
+        nó đã thêm nó vào h1 nhưng sau đó nó nhanh chóng làm mới ứng dụng. Và đây là hành vi
+        mặc định của các
+
+        thành phần biểu mẫu trong HTML. Họ làm mới để gửi, yêu cầu bài đăng
+
+        hoặc thực hiện yêu cầu nhận và làm mới trang.
+
+        Và điều gì sẽ xảy ra là khi bạn nhấp vào nút bên trong biểu mẫu, đặc biệt nếu đây là
+        nút gửi, thì nó
+
+        thực sự kích hoạt một phương thức trên biểu mẫu được gọi là onSubmit.
+
+        Vì vậy, trên thực tế, bạn có thể đặt điều này cho trình xử lý hoặc bất cứ điều gì
+        bạn quyết định thực hiện khi nút
+
+        đó
+
+        được nhấp và điều này cũng có tác dụng tương tự. Khi nút được nhấp vào bên trong
+        biểu mẫu, nó
+
+        sẽ kích hoạt onSubmit của biểu mẫu và gọi hàm mà bạn đã chỉ định.
+
+        Vì vậy, bây giờ chúng tôi không thực sự cải thiện
+
+        bất cứ điều gì, nó vẫn làm mới. Nhưng bây giờ chúng ta có thể giải quyết nó bên
+        trong hàm handleClick.
+
+        Vì vậy, chúng tôi biết rằng chúng tôi nhận được một sự kiện được thông qua bất cứ
+        khi nào một trong những trình xử lý sự kiện này được kích hoạt.
+
+        Vì vậy, chúng ta có thể bắt sự kiện đó bên trong hàm này và ngay khi kết thúc hàm
+        khi chúng
+
+        ta đã hoàn thành mọi thứ mà chúng ta muốn làm, chúng ta có thể lấy sự kiện để gọi
+        PreventDefault.
+
+        Và đây là một phương pháp về cơ bản ngăn chặn hành vi tiếp theo mặc định của sự kiện
+        mà trong trường hợp của
+
+        chúng tôi, nếu nó đến từ onClick của biểu mẫu vào đây, thì điều đó sẽ làm mới trang.
+
+        Vì vậy, bây giờ nếu tôi tiếp tục và nhập tên của mình và nhấp vào gửi, bạn sẽ nhận
+        thấy rằng nó được thêm vào
+
+        tiêu đề mà không có hành vi mặc định của việc gửi.
+
+        Vì vậy, đó chỉ là một ghi chú nhanh thực sự hữu ích khi bạn đang làm việc với các
+        biểu mẫu trong React. Trong bài học tiếp theo, tôi muốn đưa bạn đi
+
+        tham quan
+
+        ngắn gọn và so sánh việc sử dụng các lớp học vs. móc để quản lý các trạng thái.
+
+        Chúng tôi đã thấy các lớp được đề cập trong tài liệu React.
+
+        Vì vậy, tôi muốn làm sáng tỏ khái niệm và nói về lý do tại sao React lại chuyển sang
+        hooks.
+
+        Và sau đó, chúng ta sẽ học cách quản lý các trạng thái phức tạp hơn bao gồm cách
+
+        lưu các đối tượng JavaScript bằng hook useState.
+
+        Vì vậy, cho tất cả những điều đó và hơn thế nữa, tôi sẽ gặp bạn ở đó.
+    </div>
 </body>
+
 </html>
